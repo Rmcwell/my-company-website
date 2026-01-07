@@ -1,7 +1,6 @@
 @import "tailwindcss";
 
 @theme {
-    /* Colors */
     --color-navy: #1A304D;
     --color-navy-light: #2A4060;
     --color-navy-dark: #0F2035;
@@ -19,18 +18,15 @@
     --color-slate-800: #1E293B;
     --color-slate-900: #0F172A;
 
-    /* Fonts */
     --font-sans: "Inter", "system-ui", "sans-serif";
     --font-heading: "Playfair Display", "serif";
 
-    /* Custom Utilities */
     --background-image-gradient-radial: radial-gradient(var(--tw-gradient-stops));
 }
 
 /* Force hover to work on all devices (especially laptops with touchscreens) */
 @variant hover (&:hover);
 
-/* Global Base Styles */
 @layer base {
 
     html,

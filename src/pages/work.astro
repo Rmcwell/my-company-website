@@ -1,0 +1,150 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Section from "../components/ui/Section.astro";
+import Heading from "../components/ui/Heading.astro";
+import Text from "../components/ui/Text.astro";
+import SectionLabel from "../components/ui/SectionLabel.astro";
+import Button from "../components/ui/Button.astro";
+
+interface Project {
+  title: string;
+  category: string;
+  industry: string;
+  challenge: string;
+  solution: string;
+  tech: string[];
+  image: string;
+}
+
+const projects: Project[] = [
+  {
+    title: "FinTech Dashboard Redesign",
+    category: "Web Application",
+    industry: "Finance",
+    challenge:
+      "The client needed to modernize their legacy dashboard to improve user retention and data visualization capabilities.",
+    solution:
+      "We rebuilt the frontend using React and D3.js, creating a responsive, dark-mode enabled interface that reduced load times by 40%.",
+    tech: ["React", "TypeScript", "D3.js", "Node.js"],
+    image:
+      "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&q=80&w=1000",
+  },
+  {
+    title: "E-Commerce Platform Scale",
+    category: "Custom Development",
+    industry: "Retail",
+    challenge:
+      "A rapidly growing fashion brand was experiencing crashes during high-traffic drops.",
+    solution:
+      "We migrated their monolithic architecture to a headless setup with Shopify Plus and Next.js, ensuring 99.99% uptime.",
+    tech: ["Next.js", "Shopify Plus", "Tailwind CSS", "Vercel"],
+    image:
+      "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80&w=1000",
+  },
+  {
+    title: "HealthTech Patient Portal",
+    category: "UI/UX & Development",
+    industry: "Healthcare",
+    challenge:
+      "Patients found the existing portal confusing and difficult to navigate on mobile devices.",
+    solution:
+      "We designed a mobile-first experience with strict accessibility compliance (WCAG 2.1 AA) and secure data handling.",
+    tech: ["Vue.js", "Tailwind", "Python", "AWS"],
+    image:
+      "https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?auto=format&fit=crop&q=80&w=1000",
+  },
+];
+---
+
+<Layout>
+  <div class="bg-navy py-20 text-center text-white">
+    <div class="max-w-4xl mx-auto px-4">
+      <SectionLabel>Our Work</SectionLabel>
+      <Heading as="h1" class="text-white mb-6"> Proven Results </Heading>
+      <Text class="text-slate-300">
+        A selection of projects where we've helped clients navigate complex
+        digital challenges.
+      </Text>
+    </div>
+  </div>
+
+  <Section>
+    <div class="space-y-32">
+      {
+        projects.map((project, index) => (
+          <div class="group">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+              <div
+                class={`order-2 ${index % 2 === 1 ? "lg:order-2" : "lg:order-1"}`}
+              >
+                <div class="flex items-center space-x-4 mb-4">
+                  <span class="px-3 py-1 bg-teal/10 text-teal text-sm font-bold rounded-full uppercase tracking-wide">
+                    {project.category}
+                  </span>
+                  <span class="text-slate-500 text-sm font-medium border-l border-slate-300 pl-4">
+                    {project.industry}
+                  </span>
+                </div>
+
+                <h2 class="text-3xl font-bold text-navy mb-6">
+                  {project.title}
+                </h2>
+
+                <div class="space-y-6 mb-8">
+                  <div>
+                    <h4 class="text-sm font-bold text-navy uppercase tracking-wide mb-2">
+                      The Challenge
+                    </h4>
+                    <p class="text-slate-600">{project.challenge}</p>
+                  </div>
+                  <div>
+                    <h4 class="text-sm font-bold text-navy uppercase tracking-wide mb-2">
+                      The Solution
+                    </h4>
+                    <p class="text-slate-600">{project.solution}</p>
+                  </div>
+                </div>
+
+                <div class="mb-8 flex flex-wrap gap-2">
+                  {project.tech.map((t) => (
+                    <span class="rounded-md bg-slate-100 px-3 py-1 text-xs font-medium text-slate-600">
+                      {t}
+                    </span>
+                  ))}
+                </div>
+
+                <Button variant="outline" withArrow>
+                  View Case Study
+                </Button>
+              </div>
+
+              <div
+                class={`order-1 ${index % 2 === 1 ? "lg:order-1" : "lg:order-2"}`}
+              >
+                <div class="relative rounded-lg overflow-hidden shadow-2xl transition-transform duration-500 group-hover:-translate-y-2">
+                  <div class="absolute inset-0 bg-navy/20 group-hover:bg-transparent transition-colors z-10" />
+                  <img
+                    src={project.image}
+                    alt={project.title}
+                    class="w-full h-auto object-cover aspect-[4/3] transform group-hover:scale-105 transition-transform duration-700"
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+        ))
+      }
+    </div>
+  </Section>
+
+  <Section bg="light" class="text-center">
+    <Heading class="mb-6">Have a project in mind?</Heading>
+    <Text class="mb-8">
+      We love tackling new challenges. Let's see if we're a good fit for your
+      next big idea.
+    </Text>
+    <a href="/contact">
+      <Button variant="primary" size="lg"> Start a Conversation </Button>
+    </a>
+  </Section>
+</Layout>
