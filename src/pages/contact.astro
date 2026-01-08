@@ -1,10 +1,10 @@
 ---
 import Layout from "../layouts/Layout.astro";
-import Button from "../components/ui/Button.astro";
 import Heading from "../components/ui/Heading.astro";
 import Text from "../components/ui/Text.astro";
 import Section from "../components/ui/Section.astro";
 import SectionLabel from "../components/ui/SectionLabel.astro";
+import ContactForm from "../components/ContactForm.astro";
 import { Mail, Phone, MapPin, Calendar, CheckCircle } from "lucide-astro";
 ---
 
@@ -50,110 +50,7 @@ import { Mail, Phone, MapPin, Calendar, CheckCircle } from "lucide-astro";
       </div>
 
 
-      <div class="bg-white p-8 rounded-xl shadow-lg border border-slate-100">
-        <!-- {
-          formState === "success" ? (
-            <div class="text-center py-12">
-              <div class="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-6">
-                <CheckCircle class="h-8 w-8 text-green-600" />
-              </div>
-              <h3 class="text-2xl font-bold text-navy mb-4">Message Sent!</h3>
-              <p class="text-slate-600 mb-8">
-                Thanks for reaching out. We'll be in touch shortly to discuss
-                your project.
-              </p>
-              <Button onClick={() => setFormState('idle')} variant="outline">
-                Send Another Message
-              </Button>
-            </div>
-          ) : ( -->
-        <form
-          name="contact"
-          method="POST"
-          data-netlify="true"
-          action="/success"
-          class="space-y-6"
-        >
-          <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
-            <div>
-              <label class="block text-sm font-medium text-slate-700 mb-2">
-                Name
-              </label>
-              <input
-                type="text"
-                id="name"
-                required
-                class="w-full px-4 py-3 rounded-lg border border-slate-300 focus:ring-2 focus:ring-teal focus:border-transparent outline-none transition-all"
-                placeholder="John Doe"
-              />
-            </div>
-            <div>
-              <label class="block text-sm font-medium text-slate-700 mb-2">
-                Email
-              </label>
-              <input
-                type="email"
-                id="email"
-                required
-                class="w-full px-4 py-3 rounded-lg border border-slate-300 focus:ring-2 focus:ring-teal focus:border-transparent outline-none transition-all"
-                placeholder="john@company.com"
-              />
-            </div>
-          </div>
-
-          <div>
-            <label class="block text-sm font-medium text-slate-700 mb-2">
-              Company (Optional)
-            </label>
-            <input
-              type="text"
-              id="company"
-              class="w-full px-4 py-3 rounded-lg border border-slate-300 focus:ring-2 focus:ring-teal focus:border-transparent outline-none transition-all"
-              placeholder="Your Company Ltd."
-            />
-          </div>
-
-          <div>
-            <label class="block text-sm font-medium text-slate-700 mb-2">
-              Service Interested In
-            </label>
-            <select
-              id="service"
-              class="w-full px-4 py-3 rounded-lg border border-slate-300 focus:ring-2 focus:ring-teal focus:border-transparent outline-none transition-all bg-white"
-            >
-              <option>Custom Website Development</option>
-              <option>Web Application</option>
-              <option>UI/UX Design</option>
-              <option>Maintenance & Support</option>
-              <option>Other</option>
-            </select>
-          </div>
-
-          <div>
-            <label class="block text-sm font-medium text-slate-700 mb-2">
-              Project Details
-            </label>
-            <textarea
-              id="message"
-              rows={4}
-              required
-              class="w-full px-4 py-3 rounded-lg border border-slate-300 focus:ring-2 focus:ring-teal focus:border-transparent outline-none transition-all"
-              placeholder="Tell us a bit about your project goals and timeline..."
-            ></textarea>
-          </div>
-
-          <!-- <button
-                type="submit"
-                class="w-full px-6 py-3 bg-blue-600 text-white font-semibold rounded-lg hover:bg-blue-700 transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
-                disabled={formState === "submitting"}
-              >
-                {formState === "submitting" ? "Sending..." : "Send Message"}
-              </button>
-            </form>
-          )
-        } -->
-        </form>
-      </div>
+        <ContactForm />
     </div>
     </Section>
 </Layout>

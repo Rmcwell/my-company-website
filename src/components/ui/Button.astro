@@ -7,6 +7,7 @@ interface Props {
     withArrow?: boolean;
     class?: string;
     type?: "button" | "submit" | "reset";
+    id?: string;
 }
 
 const {
@@ -15,6 +16,7 @@ const {
     withArrow = false,
     class: className = "",
     type = "button",
+    id = "",
     ...rest
 } = Astro.props;
 
@@ -40,7 +42,7 @@ const sizes = {
 const buttonClasses = `${baseStyles} ${variants[variant]} ${sizes[size]} ${className}`;
 ---
 
-<button type={type} class={buttonClasses} {...rest}>
+<button id={id} type={type} class={buttonClasses} {...rest}>
     <slot />
     {withArrow && <ArrowRight class="ml-2 h-4 w-4" />}
 </button>
