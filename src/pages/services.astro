@@ -1,0 +1,177 @@
+---
+// src/pages/services.astro
+import Layout from "../layouts/Layout.astro";
+import Heading from "../components/ui/Heading.astro";
+import Text from "../components/ui/Text.astro";
+import Section from "../components/ui/Section.astro";
+import Button from "../components/ui/Button.astro";
+import SectionLabel from "../components/ui/SectionLabel.astro";
+import {
+  Monitor,
+  Server,
+  PenTool,
+  Search,
+  Settings,
+  Check,
+} from "lucide-astro";
+
+interface ServiceFeature {
+  icon: any;
+  title: string;
+  description: string;
+  features: string[];
+  target: string;
+}
+
+const services: ServiceFeature[] = [
+  {
+    icon: Monitor,
+    title: "Custom Website Development",
+    description:
+      "Bespoke websites built from the ground up to match your brand and business goals perfectly.",
+    features: [
+      "Responsive Design",
+      "CMS Integration",
+      "Accessibility Compliance",
+      "Fast Loading Speeds",
+    ],
+    target: "Businesses needing a unique digital presence.",
+  },
+  {
+    icon: Server,
+    title: "Web Application Development",
+    description:
+      "Powerful, scalable web apps that streamline operations and solve complex business problems.",
+    features: [
+      "React / Next.js",
+      "Secure API Integration",
+      "Database Design",
+      "Cloud Infrastructure",
+    ],
+    target: "SaaS companies and complex platforms.",
+  },
+  {
+    icon: PenTool,
+    title: "UI / UX Design",
+    description:
+      "User-centric design that balances aesthetics with functionality to drive conversions.",
+    features: [
+      "Wireframing & Prototyping",
+      "User Research",
+      "Brand Identity",
+      "Design Systems",
+    ],
+    target: "Products needing a facelift or better usability.",
+  },
+  {
+    icon: Search,
+    title: "Performance & SEO",
+    description:
+      "Technical optimization to ensure your site ranks high and loads instantly on any device.",
+    features: [
+      "Core Web Vitals",
+      "Technical SEO",
+      "Speed Optimization",
+      "Analytics Setup",
+    ],
+    target: "Sites struggling with visibility or speed.",
+  },
+  {
+    icon: Settings,
+    title: "Maintenance & Support",
+    description:
+      "Ongoing care to keep your digital assets secure, updated, and running smoothly.",
+    features: [
+      "Security Updates",
+      "Content Updates",
+      "Bug Fixes",
+      "Performance Monitoring",
+    ],
+    target: "Companies wanting peace of mind.",
+  },
+];
+---
+
+<Layout>
+  <Section bg="navy" class="text-center">
+    <div
+      class="absolute inset-0 opacity-10 bg-[url('https://www.transparenttextures.com/patterns/cubes.png')]"
+    />
+    <SectionLabel>Our Services</SectionLabel>
+    <Heading as="h1" class="text-white mb-6">
+      Expertise That Runs Deep
+    </Heading>
+    <Text>
+      Comprehensive digital solutions tailored to your specific needs. We don't
+      just build; we partner in your success.
+    </Text>
+  </Section>
+  <Section>
+    <div class="space-y-24">
+      {
+        services.map((service, index) => (
+          <div
+            class={`flex flex-col ${index % 2 === 1 ? "lg:flex-row-reverse" : "lg:flex-row"} gap-12 items-center`}
+          >
+            <div class="flex-1">
+              <div class="w-16 h-16 bg-teal/10 rounded-xl flex items-center justify-center mb-6">
+                <service.icon class="h-8 w-8 text-teal" />
+              </div>
+              <h2 class="text-3xl font-bold text-navy mb-4">{service.title}</h2>
+              <p class="text-lg text-slate-600 mb-6 leading-relaxed">
+                {service.description}
+              </p>
+
+              <div class="bg-slate-50 p-6 rounded-lg border border-slate-100 mb-8">
+                <h4 class="font-bold text-navy mb-4 text-sm uppercase tracking-wide">
+                  What's Included:
+                </h4>
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                  {service.features.map((feature, i) => (
+                    <div class="flex items-center space-x-2">
+                      <Check class="h-4 w-4 text-gold" />
+                      <span class="text-slate-700 text-sm">{feature}</span>
+                    </div>
+                  ))}
+                </div>
+              </div>
+
+              <div class="flex items-center justify-between border-t border-slate-100 pt-6">
+                <div class="text-sm text-slate-500">
+                  <span class="font-semibold text-navy">Best for:</span>{" "}
+                  {service.target}
+                </div>
+                <a href="/contact">
+                  <Button variant="outline" size="sm">
+                    Request Pricing
+                  </Button>
+                </a>
+              </div>
+            </div>
+
+            <div class="flex-1 w-full">
+              <div class="aspect-video bg-slate-100 rounded-lg shadow-lg overflow-hidden relative group">
+                <div class="absolute inset-0 bg-navy/5 group-hover:bg-transparent transition-colors duration-500" />
+                {/* Placeholder for service illustration */}
+                <div class="w-full h-full flex items-center justify-center bg-slate-200 text-slate-400">
+                  <service.icon class="h-24 w-24 opacity-20" />
+                </div>
+              </div>
+            </div>
+          </div>
+        ))
+      }
+    </div>
+  </Section>
+
+  <Section bg="navy" class="text-center">
+    <Heading class="text-white mb-6">Not sure what you need?</Heading>
+    <Text class="text-slate-300 mb-8 max-w-2xl mx-auto">
+      Every project is unique. Let's hop on a call to discuss your specific
+      challenges and find the right solution.
+    </Text>
+    <a href="/contact">
+      <Button variant="primary">Schedule a Consultation</Button>
+    </a>
+  </Section>
+</Layout>

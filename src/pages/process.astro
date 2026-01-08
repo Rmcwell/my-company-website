@@ -73,9 +73,11 @@ const steps: Step[] = [
 ---
 
 <Layout>
-  <div class="bg-navy py-20 text-center text-white">
-    <div class="max-w-4xl mx-auto px-4">
-      <SectionLabel>Our Process</SectionLabel>
+  <Section bg="navy" class="text-center">
+    <div
+      class="absolute inset-0 opacity-10 bg-[url('https://www.transparenttextures.com/patterns/cubes.png')]"
+    />
+    <SectionLabel>Our Process</SectionLabel>
       <Heading as="h1" class="text-white mb-6">
         How We Work
       </Heading>
@@ -83,8 +85,7 @@ const steps: Step[] = [
         A transparent, collaborative approach designed to deliver excellence
         on time and on budget.
       </Text>
-    </div>
-  </div>
+  </Section>
 
   <Section bg="light">
     <div class="max-w-5xl mx-auto">

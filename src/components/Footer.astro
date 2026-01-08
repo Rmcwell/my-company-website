@@ -1,155 +1,136 @@
 ---
 import {
-    Anchor,
-    Mail,
-    Phone,
-    MapPin,
-    Linkedin,
-    Github,
-    Twitter,
+  Anchor,
+  Mail,
+  Phone,
+  MapPin,
+  Linkedin,
+  Github,
+  Twitter,
 } from "lucide-astro";
 
 const currentYear = new Date().getFullYear();
 
 const navigationLinks = ["Home", "Services", "Work", "Process", "About"];
 const serviceLinks = [
-    "Web Development",
-    "App Development",
-    "UI/UX Design",
-    "SEO & Performance",
+  "Web Development",
+  "App Development",
+  "UI/UX Design",
+  "SEO & Performance",
 ];
 ---
 
 <footer class="bg-navy text-white pt-16 pb-8 border-t-4 border-gold">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="grid grid-cols-1 md:grid-cols-4 gap-12 mb-12">
-            <!-- Brand -->
-            <div class="space-y-4">
-                <div class="flex items-center space-x-2">
-                    <Anchor class="h-6 w-6 text-gold" />
-                    <span
-                        class="text-xl font-heading font-bold text-white tracking-wide"
-                    >
-                        MARITIME<span class="text-teal">DEV</span>
-                    </span>
-                </div>
-                <p class="text-slate-400 text-sm leading-relaxed">
-                    Building scalable, high-performance digital solutions with
-                    precision and craft. Your partner in navigating the digital
-                    horizon.
-                </p>
-            </div>
-
-            <!-- Quick Links -->
-            <div>
-                <h4
-                    class="text-gold font-bold uppercase tracking-wider text-sm mb-6"
-                >
-                    Navigation
-                </h4>
-                <ul class="space-y-3">
-                    {
-                        navigationLinks.map((item) => (
-                            <li>
-                                <a
-                                    href={
-                                        item === "Home"
-                                            ? "/"
-                                            : `/${item.toLowerCase()}`
-                                    }
-                                    class="text-slate-300 hover:text-teal transition-colors text-sm"
-                                >
-                                    {item}
-                                </a>
-                            </li>
-                        ))
-                    }
-                </ul>
-            </div>
-
-            <!-- Services -->
-            <div>
-                <h4
-                    class="text-gold font-bold uppercase tracking-wider text-sm mb-6"
-                >
-                    Services
-                </h4>
-                <ul class="space-y-3">
-                    {
-                        serviceLinks.map((item) => (
-                            <li>
-                                <a
-                                    href="/services"
-                                    class="text-slate-300 hover:text-teal transition-colors text-sm"
-                                >
-                                    {item}
-                                </a>
-                            </li>
-                        ))
-                    }
-                </ul>
-            </div>
-
-            <!-- Contact -->
-            <div>
-                <h4
-                    class="text-gold font-bold uppercase tracking-wider text-sm mb-6"
-                >
-                    Contact
-                </h4>
-                <ul class="space-y-4">
-                    <li
-                        class="flex items-start space-x-3 text-slate-300 text-sm"
-                    >
-                        <Mail class="h-5 w-5 text-teal shrink-0" />
-                        <span>hello@maritimedev.com</span>
-                    </li>
-                    <li
-                        class="flex items-start space-x-3 text-slate-300 text-sm"
-                    >
-                        <Phone class="h-5 w-5 text-teal shrink-0" />
-                        <span>+1 (555) 123-4567</span>
-                    </li>
-                    <li
-                        class="flex items-start space-x-3 text-slate-300 text-sm"
-                    >
-                        <MapPin class="h-5 w-5 text-teal shrink-0" />
-                        <span>San Francisco, CA</span>
-                    </li>
-                </ul>
-            </div>
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="grid grid-cols-1 md:grid-cols-4 gap-12 mb-12">
+      <!-- Brand -->
+      <div class="space-y-4">
+        <div class="flex items-center space-x-2">
+          <Anchor class="h-6 w-6 text-gold" />
+          <span class="text-xl font-heading font-bold text-white tracking-wide">
+            MARITIME<span class="text-teal">DEV</span>
+          </span>
         </div>
+        <p class="text-slate-400 text-sm leading-relaxed">
+          Building scalable, high-performance digital solutions with precision
+          and craft. Your partner in navigating the digital horizon.
+        </p>
+      </div>
 
-        <!-- Divider -->
-        <div
-            class="border-t border-white/10 pt-8 flex flex-col md:flex-row justify-between items-center"
-        >
-            <p class="text-slate-500 text-sm">
-                © {currentYear} MaritimeDev. All rights reserved.
-            </p>
-            <div class="flex space-x-6 mt-4 md:mt-0">
+      <!-- Quick Links -->
+      <div>
+        <h4 class="text-gold font-bold uppercase tracking-wider text-sm mb-6">
+          Navigation
+        </h4>
+        <ul class="space-y-3">
+          {
+            navigationLinks.map((item) => (
+              <li>
                 <a
-                    href="#"
-                    class="text-slate-400 hover:text-gold transition-colors"
-                    aria-label="LinkedIn"
+                  href={item === "Home" ? "/" : `/${item.toLowerCase()}`}
+                  class="text-slate-300 hover:text-teal transition-colors text-sm"
                 >
-                    <Linkedin class="h-5 w-5" />
+                  {item}
                 </a>
+              </li>
+            ))
+          }
+        </ul>
+      </div>
+
+      <!-- Services -->
+      <div>
+        <h4 class="text-gold font-bold uppercase tracking-wider text-sm mb-6">
+          Services
+        </h4>
+        <ul class="space-y-3">
+          {
+            serviceLinks.map((item) => (
+              <li>
                 <a
-                    href="#"
-                    class="text-slate-400 hover:text-gold transition-colors"
-                    aria-label="GitHub"
+                  href="/services"
+                  class="text-slate-300 hover:text-teal transition-colors text-sm"
                 >
-                    <Github class="h-5 w-5" />
+                  {item}
                 </a>
-                <a
-                    href="#"
-                    class="text-slate-400 hover:text-gold transition-colors"
-                    aria-label="Twitter"
-                >
-                    <Twitter class="h-5 w-5" />
-                </a>
-            </div>
-        </div>
+              </li>
+            ))
+          }
+        </ul>
+      </div>
+
+      <!-- Contact -->
+      <div>
+        <h4 class="text-gold font-bold uppercase tracking-wider text-sm mb-6">
+          Contact
+        </h4>
+        <ul class="space-y-4">
+          <li class="flex items-start space-x-3 text-slate-300 text-sm">
+            <Mail class="h-5 w-5 text-teal shrink-0" />
+            <span>hello@maritimedev.com</span>
+          </li>
+          <li class="flex items-start space-x-3 text-slate-300 text-sm">
+            <Phone class="h-5 w-5 text-teal shrink-0" />
+            <span>+1 (555) 123-4567</span>
+          </li>
+          <li class="flex items-start space-x-3 text-slate-300 text-sm">
+            <MapPin class="h-5 w-5 text-teal shrink-0" />
+            <span>San Francisco, CA</span>
+          </li>
+        </ul>
+      </div>
     </div>
+
+    <!-- Divider -->
+    <div
+      class="border-t border-white/10 pt-8 flex flex-col md:flex-row justify-between items-center"
+    >
+      <p class="text-slate-500 text-sm">
+        © {currentYear} MaritimeDev. All rights reserved.
+      </p>
+      <div class="flex space-x-6 mt-4 md:mt-0">
+        <a
+          href="#"
+          class="text-slate-400 hover:text-gold transition-colors"
+          aria-label="LinkedIn"
+        >
+          <Linkedin class="h-5 w-5" />
+        </a>
+        <a
+          href="#"
+          class="text-slate-400 hover:text-gold transition-colors"
+          aria-label="GitHub"
+        >
+          <Github class="h-5 w-5" />
+        </a>
+        <a
+          href="#"
+          class="text-slate-400 hover:text-gold transition-colors"
+          aria-label="Twitter"
+        >
+          <Twitter class="h-5 w-5" />
+        </a>
+      </div>
+    </div>
+  </div>
 </footer>

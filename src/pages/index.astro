@@ -72,7 +72,7 @@ const trustSignals = [
 <Layout>
   <!-- Hero Section -->
   <section
-    class="relative bg-navy min-h-[90vh] flex items-center overflow-hidden"
+    class="relative bg-navy min-h-[70vh] flex items-center overflow-hidden"
   >
     <!-- Background Image with Overlay -->
     <div class="absolute inset-0">
@@ -105,16 +105,11 @@ const trustSignals = [
             class="text-5xl md:text-6xl lg:text-7xl font-heading font-bold text-white leading-tight mb-6"
           >
             Navigate the Digital <br />
-            <span
-              class="text-transparent bg-clip-text bg-gradient-to-r from-teal to-teal-light"
-            >
-              Future with Confidence
-            </span>
+            Future with Confidence
           </h1>
           <p class="text-xl text-slate-300 mb-10 leading-relaxed max-w-2xl">
-            We build high-performance, scalable websites and applications for
-            businesses ready to grow. Precision engineering meets elegant
-            design.
+            We build clean, fast, and scalable digital tools for growing brands
+            with solid engineering and thoughtful design.
           </p>
           <div class="flex flex-col sm:flex-row gap-4">
             <a href="/contact">
@@ -155,11 +150,11 @@ const trustSignals = [
       {
         services.map((service, index) => (
           <div
-            class="bg-white p-8 rounded-lg shadow-sm hover:shadow-xl transition-all duration-300 border-t-4 border-transparent hover:border-teal group animate-fade-in-up"
+            class="bg-white p-8 rounded-lg shadow-sm hover:shadow-xl transition-all duration-300 border-t-4 border-teal group animate-fade-in-up"
             style={`animation-delay: ${index * 100}ms`}
           >
-            <div class="w-12 h-12 bg-navy/5 rounded-lg flex items-center justify-center mb-6 group-hover:bg-teal/10 transition-colors">
-              <service.icon class="h-6 w-6 text-navy group-hover:text-teal transition-colors" />
+            <div class="w-12 h-12 bg-navy/5 rounded-lg flex items-center justify-center mb-6 group-hover:bg-gold/10 transition-colors">
+              <service.icon class="h-6 w-6 text-teal group-hover:text-gold transition-colors" />
             </div>
             <h3 class="text-xl font-bold text-navy mb-3">{service.title}</h3>
             <p class="text-slate-600 leading-relaxed">{service.desc}</p>
