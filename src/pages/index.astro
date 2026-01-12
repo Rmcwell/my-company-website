@@ -6,6 +6,8 @@ import Text from "../components/ui/Text.astro";
 import Button from "../components/ui/Button.astro";
 import SectionLabel from "../components/ui/SectionLabel.astro";
 import PricingPlans from "../components/PricingPlans.astro";
+import heroVideo from "../assets/DocksideWebHero.webm";
+
 import {
   ArrowRight,
   Code,
@@ -74,13 +76,23 @@ const trustSignals = [
   <section
     class="relative bg-navy min-h-[70vh] flex items-center overflow-hidden pb-24"
   >
-    <!-- Background Image with Overlay -->
-    <div class="absolute inset-0">
+    <div class="absolute inset-0 fixed">
       <img
-        src="https://plus.unsplash.com/premium_photo-1674652175348-85a9d0bd6a9c?q=80&w=2715&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+        src="https://plus.unsplash.com/premium_photo-1661963566623-e55aa59ea60e?q=80&w=1740&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
         alt="Digital technology background"
         class="w-full h-full object-cover"
       />
+      <!-- <video
+        autoplay
+        muted
+        loop
+        playsinline
+        poster="fallback-image.jpg"
+        class="w-full h-full object-cover"
+      >
+        <source src={heroVideo} type="video/webm" />
+        Your browser does not support the video tag.
+      </video> -->
       <div class="absolute inset-0 bg-navy/85"></div>
     </div>
 
@@ -137,7 +149,6 @@ const trustSignals = [
         class="relative block w-full h-24"
         viewBox="0 0 1440 320"
         preserveAspectRatio="none"
-        xmlns="http://www.w3.org/2000/svg"
       >
         <path
           fill="#F8FAFC"
@@ -148,7 +159,7 @@ const trustSignals = [
   </section>
 
   <!-- Services Overview -->
-  <Section bg="light">
+  <Section bg="light" class="relative">
     <div class="text-center max-w-3xl mx-auto mb-16">
       <SectionLabel>What We Do</SectionLabel>
       <Heading>Everything Your Small Business Needs Online</Heading>
@@ -176,9 +187,7 @@ const trustSignals = [
   </Section>
 
   <!-- Why Choose Us -->
-  <Section
-    class="bg-gradient-to-br from-white via-teal/5 to-white relative overflow-hidden"
-  >
+  <Section>
     <div
       class="absolute top-0 right-0 w-96 h-96 bg-teal/5 rounded-full blur-3xl"
     >
@@ -252,7 +261,7 @@ const trustSignals = [
   </Section>
 
   <!-- Pricing -->
-  <Section>
+  <Section bg="light">
     <div class="text-center max-w-3xl mx-auto mb-16">
       <SectionLabel>Pricing Plans</SectionLabel>
       <Heading> Simple, Transparent Pricing Plans </Heading>
