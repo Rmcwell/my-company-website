@@ -9,35 +9,59 @@ import PricingPlans from "../components/PricingPlans.astro";
 
 import {
   ArrowRight,
-  Code,
-  Layout as LayoutIcon,
   Smartphone,
-  BarChart,
   CheckCircle,
   Shield,
   Zap,
+  Search,
+  RefreshCw,
+  Rabbit,
 } from "lucide-astro";
 
 const services = [
   {
-    icon: LayoutIcon,
-    title: "Custom Websites",
-    desc: "Professional websites tailored to your business, built to attract customers and grow your brand.",
-  },
-  {
     icon: Smartphone,
-    title: "Mobile-Friendly",
-    desc: "A seamless and responsive experience across all phones and tablets to meet your customers wherever they are.",
+    title: "Mobile-First Design",
+    subtitle: "70% of your customers browse on phones",
+    desc: "We design for phones first, then scale up to tablets and desktops. Every tap, swipe, and scroll feels intentional—not like an afterthought.",
+    bullets: [
+      "Touch-optimized buttons and navigation",
+      "Readable text without zooming",
+      "Fast loading on cellular networks",
+    ],
   },
   {
-    icon: BarChart,
-    title: "Performance & SEO",
-    desc: "Optimized for lightning-fast load speeds and high Google rankings to ensure your business gets found and users stay engaged.",
+    icon: Rabbit,
+    title: "Lightnight Fast Performance",
+    subtitle: "Speed matters",
+    desc: "Clean code, optimized images, and no bloated plugins. Your site loads in under 2 seconds—keeping visitors engaged and Google happy.",
+    bullets: [
+      "Lightweight, hand-coded HTML & CSS",
+      "Compressed images without quality loss",
+      "98+ Google PageSpeed scores",
+    ],
   },
   {
-    icon: Code,
-    title: "UI/UX Design",
-    desc: "Beautiful, accessible interfaces designed to provide intuitive navigation and guide users naturally toward conversion.",
+    icon: Search,
+    title: "Built for Google",
+    subtitle: "SEO isn't optional—it's built in",
+    desc: "Semantic HTML, proper heading structure, and accessibility best practices. Your site is built to rank, not just look good.",
+    bullets: [
+      "Clean, crawlable code structure",
+      "Optimized meta tags and descriptions",
+      "Accessibility for all users and screen readers",
+    ],
+  },
+  {
+    icon: RefreshCw,
+    title: "Unlimited Updates",
+    subtitle: "We're partners, not vendors",
+    desc: "Need to change a photo? Update your hours? Add a new service? We handle it. No tickets, no hourly rates—just email us and it's done.",
+    bullets: [
+      "Lightweight, hand-coded HTML & CSS",
+      "Optimized meta tags and descriptions",
+      "Accessibility for all users and screen readers",
+    ],
   },
 ];
 
@@ -156,196 +180,213 @@ const trustSignals = [
         solutions designed specifically for small business owners.
       </Text>
     </div>
-    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-12">
       {
-        services.map((service, index) => (
+        services.map((service) => (
+          <div class="p-8 rounded-2xl group border-slate-200 border-2 bg-white hover:bg-navy hover:border-navy transition-all duration-300">
+            <div class="flex items-start space-x-4 mb-6">
+              <div class="w-14 h-14 bg-teal-100 rounded-xl flex items-center justify-center shrink-0 group-hover:bg-navy scale-110 transition-all duration-300">
+                <service.icon class="h-7 w-7 text-teal-600 group-hover:text-gold" />
+              </div>
+              <div>
+                <h3 class="text-2xl font-bold text-slate-900 group-hover:text-white mb-2 transition-colors duration-300">
+                  {service.title}
+                </h3>
+                <p class="text-slate-600 group-hover:text-slate-400 text-sm transition-colors duration-300">
+                  {service.subtitle}
+                </p>
+              </div>
+            </div>
+            <p class="text-slate-700 group-hover:text-slate-300 leading-relaxed mb-6 transition-colors duration-300">
+              {service.desc}
+            </p>
+            <div class="space-y-3">
+              {service.bullets.map((bullet) => (
+                <div class="flex items-center space-x-3 text-sm text-slate-600 group-hover:text-slate-400 transition-colors duration-300">
+                  <div class="w-1.5 h-1.5 bg-teal-600 group-hover:bg-gold rounded-full transition-colors duration-300" />
+                  <span>{bullet}</span>
+                </div>
+              ))}
+            </div>
+          </div>
+        ))
+      }
+    </div>
+
+    <!-- Why Choose Us -->
+    <Section>
+      <div
+        class="absolute top-0 right-0 w-96 h-96 bg-teal/5 rounded-full blur-3xl"
+      >
+      </div>
+      <div
+        class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center relative z-10"
+      >
+        <div class="relative">
           <div
-            class="bg-white p-8 rounded-lg shadow-sm hover:shadow-xl transition-all duration-300 border-t-4 border-teal group animate-fade-in-up"
-            style={`animation-delay: ${index * 100}ms`}
+            class="absolute -top-4 -left-4 w-24 h-24 border-t-4 border-l-4 border-gold/30"
           >
-            <div class="w-12 h-12 bg-navy/5 rounded-lg flex items-center justify-center mb-6 group-hover:bg-teal/10 transition-colors">
-              <service.icon class="h-6 w-6 text-teal transition-colors" />
-            </div>
-            <h3 class="text-xl font-bold text-navy mb-3">{service.title}</h3>
-            <p class="text-slate-600 leading-relaxed">{service.desc}</p>
           </div>
-        ))
-      }
-    </div>
-  </Section>
+          <div
+            class="absolute -bottom-4 -right-4 w-24 h-24 border-b-4 border-r-4 border-gold/30"
+          >
+          </div>
+          <img
+            src="https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&q=80&w=1000"
+            alt="Small business owner"
+            class="rounded-lg shadow-2xl relative z-10 w-full h-auto object-cover aspect-[4/3]"
+          />
+        </div>
 
-  <!-- Why Choose Us -->
-  <Section>
-    <div
-      class="absolute top-0 right-0 w-96 h-96 bg-teal/5 rounded-full blur-3xl"
-    >
-    </div>
-    <div
-      class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center relative z-10"
-    >
-      <div class="relative">
-        <div
-          class="absolute -top-4 -left-4 w-24 h-24 border-t-4 border-l-4 border-gold/30"
-        >
+        <div>
+          <SectionLabel>Why Choose Us</SectionLabel>
+          <Heading class="mb-6">
+            Built for Small Business Owners, <br />
+            Not Big Corporations
+          </Heading>
+          <Text class="mb-8">
+            We understand the unique challenges small businesses face online.
+            That's why we create websites that are affordable, easy to manage,
+            and designed to help you compete with the big players.
+          </Text>
+
+          <div class="space-y-6">
+            {
+              [
+                {
+                  title: "Affordable Pricing",
+                  desc: "Professional websites that fit your budget, with transparent pricing and no hidden fees.",
+                  color: "bg-teal/10 border-teal/20",
+                },
+                {
+                  title: "Quick Turnaround",
+                  desc: "Get your website live in weeks, not months. We know time is money for small businesses.",
+                  color: "bg-gold/10 border-gold/20",
+                },
+                {
+                  title: "Personal Support",
+                  desc: "Work directly with our team. No call centers, no ticket systems—just real people who care.",
+                  color: "bg-navy/10 border-navy/20",
+                },
+              ].map((item, i) => (
+                <div
+                  class={`flex items-start space-x-4 p-4 rounded-lg border ${item.color} transition-all hover:shadow-md`}
+                >
+                  <div class="mt-1">
+                    <CheckCircle class="h-6 w-6 text-teal" />
+                  </div>
+                  <div>
+                    <h4 class="text-lg font-bold text-navy">{item.title}</h4>
+                    <p class="text-slate-600">{item.desc}</p>
+                  </div>
+                </div>
+              ))
+            }
+          </div>
         </div>
-        <div
-          class="absolute -bottom-4 -right-4 w-24 h-24 border-b-4 border-r-4 border-gold/30"
-        >
-        </div>
-        <img
-          src="https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&q=80&w=1000"
-          alt="Small business owner"
-          class="rounded-lg shadow-2xl relative z-10 w-full h-auto object-cover aspect-[4/3]"
-        />
       </div>
+    </Section>
 
-      <div>
-        <SectionLabel>Why Choose Us</SectionLabel>
-        <Heading class="mb-6">
-          Built for Small Business Owners, <br />
-          Not Big Corporations
-        </Heading>
-        <Text class="mb-8">
-          We understand the unique challenges small businesses face online.
-          That's why we create websites that are affordable, easy to manage, and
-          designed to help you compete with the big players.
+    <!-- Pricing -->
+    <Section bg="light">
+      <div class="text-center max-w-3xl mx-auto mb-16">
+        <SectionLabel>Pricing Plans</SectionLabel>
+        <Heading> Simple, Transparent Pricing Plans </Heading>
+        <Text>
+          Choose the plan that fits your small business needs. No hidden fees,
+          no surprises.
         </Text>
+      </div>
+      <PricingPlans />
+    </Section>
 
-        <div class="space-y-6">
-          {
-            [
-              {
-                title: "Affordable Pricing",
-                desc: "Professional websites that fit your budget, with transparent pricing and no hidden fees.",
-                color: "bg-teal/10 border-teal/20",
-              },
-              {
-                title: "Quick Turnaround",
-                desc: "Get your website live in weeks, not months. We know time is money for small businesses.",
-                color: "bg-gold/10 border-gold/20",
-              },
-              {
-                title: "Personal Support",
-                desc: "Work directly with our team. No call centers, no ticket systems—just real people who care.",
-                color: "bg-navy/10 border-navy/20",
-              },
-            ].map((item, i) => (
-              <div
-                class={`flex items-start space-x-4 p-4 rounded-lg border ${item.color} transition-all hover:shadow-md`}
-              >
-                <div class="mt-1">
-                  <CheckCircle class="h-6 w-6 text-teal" />
-                </div>
-                <div>
-                  <h4 class="text-lg font-bold text-navy">{item.title}</h4>
-                  <p class="text-slate-600">{item.desc}</p>
-                </div>
+    <!-- Process Preview -->
+    <Section bg="navy" class="relative">
+      <div class="text-center max-w-3xl mx-auto mb-16 relative z-10">
+        <SectionLabel>Our Process</SectionLabel>
+        <Heading class="text-white">Charting the Course</Heading>
+        <Text class="mt-4 text-slate-300">
+          A simple, straightforward process designed for busy small business
+          owners.
+        </Text>
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-4 gap-8 relative z-10">
+        {
+          processSteps.map((step, i) => (
+            <div class="relative">
+              <div class="bg-navy-light p-8 rounded-lg border border-white/10 hover:border-gold/50 transition-colors duration-300 h-full group hover:bg-navy-light/80">
+                <span class="text-6xl font-bold text-white/5 absolute top-4 right-4 group-hover:text-gold/10 transition-colors">
+                  {i + 1}
+                </span>
+                <h3 class="text-xl font-bold text-white mb-4 relative z-10 group-hover:text-gold transition-colors">
+                  {step.title}
+                </h3>
+                <p class="text-slate-400 text-sm relative z-10">{step.desc}</p>
               </div>
-            ))
-          }
+              {i < 3 && (
+                <div class="hidden md:block absolute top-1/2 -right-4 transform -translate-y-1/2 z-20">
+                  <ArrowRight class="text-gold h-6 w-6" />
+                </div>
+              )}
+            </div>
+          ))
+        }
+      </div>
+    </Section>
+
+    <!-- Trust Signals -->
+    <Section bg="light">
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
+        <div class="p-6">
+          <Shield class="h-12 w-12 text-gold mx-auto mb-4" />
+          <div class="text-4xl font-bold text-navy mb-2">100%</div>
+          <div class="text-slate-600">Satisfaction Guaranteed</div>
+        </div>
+        <div class="p-6 border-l border-r border-slate-200">
+          <Zap class="h-12 w-12 text-gold mx-auto mb-4" />
+          <div class="text-4xl font-bold text-navy mb-2">98+</div>
+          <div class="text-slate-600">Google PageSpeed Score</div>
+        </div>
+        <div class="p-6">
+          <CheckCircle class="h-12 w-12 text-gold mx-auto mb-4" />
+          <div class="text-4xl font-bold text-navy mb-2">2-4 Weeks</div>
+          <div class="text-slate-600">Average Launch Time</div>
         </div>
       </div>
-    </div>
-  </Section>
+    </Section>
 
-  <!-- Pricing -->
-  <Section bg="light">
-    <div class="text-center max-w-3xl mx-auto mb-16">
-      <SectionLabel>Pricing Plans</SectionLabel>
-      <Heading> Simple, Transparent Pricing Plans </Heading>
-      <Text>
-        Choose the plan that fits your small business needs. No hidden fees, no
-        surprises.
-      </Text>
-    </div>
-    <PricingPlans />
-  </Section>
-
-  <!-- Process Preview -->
-  <Section bg="navy" class="relative">
-    <div class="text-center max-w-3xl mx-auto mb-16 relative z-10">
-      <SectionLabel>Our Process</SectionLabel>
-      <Heading class="text-white">Charting the Course</Heading>
-      <Text class="mt-4 text-slate-300">
-        A simple, straightforward process designed for busy small business
-        owners.
-      </Text>
-    </div>
-    <div class="grid grid-cols-1 md:grid-cols-4 gap-8 relative z-10">
-      {
-        processSteps.map((step, i) => (
-          <div class="relative">
-            <div class="bg-navy-light p-8 rounded-lg border border-white/10 hover:border-gold/50 transition-colors duration-300 h-full group hover:bg-navy-light/80">
-              <span class="text-6xl font-bold text-white/5 absolute top-4 right-4 group-hover:text-gold/10 transition-colors">
-                {i + 1}
-              </span>
-              <h3 class="text-xl font-bold text-white mb-4 relative z-10 group-hover:text-gold transition-colors">
-                {step.title}
-              </h3>
-              <p class="text-slate-400 text-sm relative z-10">{step.desc}</p>
-            </div>
-            {i < 3 && (
-              <div class="hidden md:block absolute top-1/2 -right-4 transform -translate-y-1/2 z-20">
-                <ArrowRight class="text-gold h-6 w-6" />
-              </div>
-            )}
-          </div>
-        ))
-      }
-    </div>
-  </Section>
-
-  <!-- Trust Signals -->
-  <Section bg="light">
-    <div class="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
-      <div class="p-6">
-        <Shield class="h-12 w-12 text-gold mx-auto mb-4" />
-        <div class="text-4xl font-bold text-navy mb-2">100%</div>
-        <div class="text-slate-600">Satisfaction Guaranteed</div>
+    <!-- CTA -->
+    <Section bg="teal" class="py-24" paddingBottom>
+      <div class="max-w-4xl mx-auto px-4 text-center relative z-10">
+        <h2 class="text-4xl md:text-5xl font-heading font-bold text-white mb-6">
+          Ready to Grow Your Business Online?
+        </h2>
+        <p class="text-xl text-white/90 mb-10">
+          Let's talk about your website. Get a free quote and see how we can
+          help your small business succeed online.
+        </p>
+        <a href="/contact">
+          <Button variant="secondary" size="lg"> Start Your Project </Button>
+        </a>
       </div>
-      <div class="p-6 border-l border-r border-slate-200">
-        <Zap class="h-12 w-12 text-gold mx-auto mb-4" />
-        <div class="text-4xl font-bold text-navy mb-2">98+</div>
-        <div class="text-slate-600">Google PageSpeed Score</div>
-      </div>
-      <div class="p-6">
-        <CheckCircle class="h-12 w-12 text-gold mx-auto mb-4" />
-        <div class="text-4xl font-bold text-navy mb-2">2-4 Weeks</div>
-        <div class="text-slate-600">Average Launch Time</div>
-      </div>
-    </div>
-  </Section>
+    </Section>
 
-  <!-- CTA -->
-  <Section bg="teal" class="py-24" paddingBottom>
-    <div class="max-w-4xl mx-auto px-4 text-center relative z-10">
-      <h2 class="text-4xl md:text-5xl font-heading font-bold text-white mb-6">
-        Ready to Grow Your Business Online?
-      </h2>
-      <p class="text-xl text-white/90 mb-10">
-        Let's talk about your website. Get a free quote and see how we can help
-        your small business succeed online.
-      </p>
-      <a href="/contact">
-        <Button variant="secondary" size="lg"> Start Your Project </Button>
-      </a>
-    </div>
-  </Section>
-
-  <style>
-    @keyframes fade-in-up {
-      from {
-        opacity: 0;
-        transform: translateY(20px);
+    <style>
+      @keyframes fade-in-up {
+        from {
+          opacity: 0;
+          transform: translateY(20px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
       }
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
-    }
 
-    .animate-fade-in-up {
-      animation: fade-in-up 0.6s ease-out forwards;
-    }
-  </style>
+      .animate-fade-in-up {
+        animation: fade-in-up 0.6s ease-out forwards;
+      }
+    </style>
+  </Section>
 </Layout>
