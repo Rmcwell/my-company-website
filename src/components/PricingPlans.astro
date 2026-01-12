@@ -1,0 +1,127 @@
+---
+import Button from "./ui/Button.astro";
+import { Check, X } from "lucide-astro";
+
+type Plan = {
+  name: string;
+  price: string;
+  payment: string;
+  description: string;
+  features: string[];
+  notIncluded: string[];
+  highlighted: boolean;
+  disclaimer: boolean;
+};
+
+const pricingPlans: Plan[] = [
+  {
+    name: "Monthly",
+    price: "$150",
+    payment: "Per Month",
+    description: "Most popular for growing businesses",
+    features: [
+      "Design and Development",
+      "Up to 6 pages",
+      "$100 one-time fee per page after 6",
+      "24/7 Support",
+      "Unlimited Edits *",
+      "Lifetime Updates *",
+      "Hosting, Domain & SSL",
+    ],
+    notIncluded: [],
+    highlighted: true,
+    disclaimer: true,
+  },
+  {
+    name: "Full Cost",
+    price: "$2,500",
+    payment: "+$25/mo Hosting",
+    description: "Perfect for new businesses getting online",
+    features: [
+      "Design and Development",
+      "Up to 6 pages",
+      "$100 one-time fee per page after 6",
+      "30 days support",
+      "+$50/mo Unlimited Edits Add-on",
+    ],
+    notIncluded: ["24/7 Support", "Lifetime Updates"],
+    highlighted: false,
+    disclaimer: false,
+  },
+];
+---
+
+<div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-6xl mx-auto">
+  {
+    pricingPlans.map((plan) => (
+      <div
+        class={`relative bg-light rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 ${
+          plan.highlighted
+            ? "border-4 border-teal-500"
+            : "border border-slate-200"
+        }`}
+      >
+        {plan.highlighted && (
+          <div class="absolute -top-4 left-1/2 transform -translate-x-1/2">
+            <span class="bg-teal-500 text-white px-4 py-1 rounded-full text-sm font-bold">
+              Most Popular
+            </span>
+          </div>
+        )}
+
+        <div class="p-8">
+          <h3 class="text-2xl font-bold text-slate-900 mb-2">{plan.name}</h3>
+          <p class="text-slate-600 text-sm mb-6">{plan.description}</p>
+
+          <div class="mb-6">
+            <span class="text-5xl font-bold text-slate-900">{plan.price}</span>
+            {plan.price !== "Custom" && (
+              <span class="text-slate-600 ml-2">{plan.payment}</span>
+            )}
+          </div>
+
+          <a href="/contact">
+            <button
+              class={`w-full mb-8 px-6 py-3 rounded-lg font-semibold transition-all duration-200 cursor-pointer ${
+                plan.highlighted
+                  ? "bg-teal-500 text-white hover:bg-teal-600"
+                  : "border-2 border-teal-500 text-teal-500 hover:bg-teal-50"
+              }`}
+            >
+              Get Started
+            </button>
+          </a>
+
+          <div class="space-y-4">
+            <div class="text-sm font-bold text-slate-900 uppercase tracking-wide mb-4">
+              What's Included:
+            </div>
+            {plan.features.map((feature) => (
+              <div class="flex items-start space-x-3">
+                <Check class="h-5 w-5 text-gold shrink-0 mt-0.5" />
+                <span class="text-slate-600 text-sm">{feature}</span>
+              </div>
+            ))}
+            {plan.notIncluded.length > 0 && (
+              <>
+                <div class="border-t border-slate-200 my-4" />
+                {plan.notIncluded.map((feature) => (
+                  <div class="flex items-start space-x-3 opacity-50">
+                    <X class="h-5 w-5 text-slate-400 shrink-0 mt-0.5" />
+                    <span class="text-slate-500 text-sm">{feature}</span>
+                  </div>
+                ))}
+              </>
+            )}
+          </div>
+        </div>
+        {plan.disclaimer && (
+          <span class="text-slate-500 text-sm text-center block px-8 mb-4">
+            * Unlimited edits and updates apply to completed pages only. New
+            pages are still billed at $100/page.
+          </span>
+        )}
+      </div>
+    ))
+  }
+</div>
