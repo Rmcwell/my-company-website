@@ -32,7 +32,7 @@ const services = [
   },
   {
     icon: Rabbit,
-    title: "Lightnight Fast Performance",
+    title: "Lightnight Fast",
     subtitle: "Speed matters",
     desc: "Clean code, optimized images, and no bloated plugins. Your site loads in under 2 seconds—keeping visitors engaged and Google happy.",
     bullets: [
@@ -65,29 +65,23 @@ const services = [
   },
 ];
 
-const whyChooseUs = [
-  {
-    title: "Performance First",
-    desc: "Lightning fast load times that keep users engaged.",
-  },
-  {
-    title: "Scalable Architecture",
-    desc: "Codebases that grow with your business, not against it.",
-  },
-  {
-    title: "Clear Communication",
-    desc: "No jargon. Just transparent updates and honest advice.",
-  },
-];
-
 const processSteps = [
-  { title: "Discovery", desc: "We map out the requirements and goals." },
   {
-    title: "Design & Development",
-    desc: "We build with clean, efficient code.",
+    title: "Discovery",
+    desc: "We clarify your goals and budget so every page supports your business objectives.",
   },
-  { title: "Launch", desc: "We test, deploy, and monitor performance." },
-  { title: "Support", desc: "We monitor performance." },
+  {
+    title: "Design & Build",
+    desc: "We craft a modern, mobile‑first website tailored to your brand, optimized for speed and SEO.",
+  },
+  {
+    title: "Launch",
+    desc: "We handle testing and deployment, so your new site goes live smoothly and reliably.",
+  },
+  {
+    title: "Support",
+    desc: "We provide ongoing updates and performance checks to keep your site working hard for you.",
+  },
 ];
 
 const trustSignals = [
@@ -100,7 +94,7 @@ const trustSignals = [
 <Layout>
   <!-- Hero Section -->
   <section
-    class="relative bg-navy min-h-[70vh] flex items-center overflow-hidden pb-24"
+    class="relative bg-navy min-h-[75vh] flex items-center overflow-hidden pb-24"
   >
     <div class="absolute inset-0 fixed">
       <img
@@ -154,6 +148,20 @@ const trustSignals = [
                 View Our Work
               </Button>
             </a>
+          </div>
+          <div class="flex flex-wrap gap-8 text-white/80 mt-6">
+            <div class="flex items-center space-x-2 trust-indicator opacity-0">
+              <CheckCircle class="w-5 h-5 text-gold" />
+              <span class="text-sm">2-4 Weeks Delivery</span>
+            </div>
+            <div class="flex items-center space-x-2 trust-indicator opacity-0">
+              <CheckCircle class="w-5 h-5 text-gold" />
+              <span class="text-sm">98+ Pagespeed Score</span>
+            </div>
+            <div class="flex items-center space-x-2 trust-indicator opacity-0">
+              <CheckCircle class="w-5 h-5 text-gold" />
+              <span class="text-sm">SEO Optimized</span>
+            </div>
           </div>
         </div>
       </div>
@@ -389,6 +397,22 @@ const trustSignals = [
 
     .animate-fade-in-up {
       animation: fade-in-up 0.6s ease-out forwards;
+    }
+
+    .trust-indicator {
+      animation: fade-in-up 0.5s ease-out forwards;
+    }
+
+    .trust-indicator:nth-child(1) {
+      animation-delay: 0.5s;
+    }
+
+    .trust-indicator:nth-child(2) {
+      animation-delay: 0.6s;
+    }
+
+    .trust-indicator:nth-child(3) {
+      animation-delay: 0.7s;
     }
   </style>
 </Layout>
