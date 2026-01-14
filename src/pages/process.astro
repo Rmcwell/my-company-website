@@ -1,171 +1,230 @@
 ---
-import Layout from "../layouts/Layout.astro";
-import Heading from "../components/ui/Heading.astro";
-import Text from "../components/ui/Text.astro";
-import Section from "../components/ui/Section.astro";
-import SectionLabel from "../components/ui/SectionLabel.astro";
-import Button from "../components/ui/Button.astro";
+import Layout from '../layouts/Layout.astro';
+import Section from '../components/ui/Section.astro';
+import Heading from '../components/ui/Heading.astro';
+import Text from '../components/ui/Text.astro';
+import SectionLabel from '../components/ui/SectionLabel.astro';
+import Button from '../components/ui/Button.astro';
+import {
+  Search,
+  Palette,
+  Code2,
+  Rocket,
+  Headphones,
+  CheckCircle2,
+  ArrowRight,
+} from 'lucide-astro';
 
 interface Step {
   number: string;
+  icon: any;
   title: string;
   desc: string;
   details: string[];
+  color: string;
+  bgColor: string;
+  glowColor: string;
+  borderColor: string;
+  boxBg: string;
+  dotColor: string;
+  checkColor: string;
 }
 
 const steps: Step[] = [
   {
     number: '01',
+    icon: Search,
     title: 'Discovery & Planning',
-    desc: 'We start by understanding your business goals, target audience, and technical requirements. We map out the entire project scope to avoid surprises later.',
+    desc: 'We start by diving deep into your business goals, target audience, and technical requirements. This phase is all about asking the right questions and mapping out a clear roadmap.',
     details: [
       'Stakeholder Interviews',
       'Requirements Gathering',
       'Technical Feasibility',
       'Project Roadmap',
     ],
+    color: 'teal',
+    bgColor: 'bg-[var(--color-teal)]',
+    glowColor: 'bg-[var(--color-teal)]/20',
+    borderColor: 'border-[var(--color-teal)]',
+    boxBg: 'bg-[var(--color-teal-light)]',
+    dotColor: 'bg-[var(--color-teal)]',
+    checkColor: 'text-[var(--color-teal)]'
   },
   {
     number: '02',
+    icon: Palette,
     title: 'Design & Architecture',
-    desc: 'We create the visual identity and technical blueprint. This includes wireframes, high-fidelity mockups, and database schema design.',
+    desc: 'Our designers and architects work together to create both the visual identity and technical foundation. Every pixel and every line of code is intentional.',
     details: [
       'UI/UX Design',
       'System Architecture',
-      'Prototyping',
+      'Interactive Prototyping',
       'Tech Stack Selection',
     ],
+    color: 'gold',
+    bgColor: 'bg-[var(--color-gold)]',
+    glowColor: 'bg-[var(--color-gold)]/20',
+    borderColor: 'border-[var(--color-gold)]',
+    boxBg: 'bg-[var(--color-gold-light)]',
+    dotColor: 'bg-[var(--color-gold)]',
+    checkColor: 'text-[var(--color-gold)]'
   },
   {
     number: '03',
+    icon: Code2,
     title: 'Development',
-    desc: "Our engineers get to work building your solution using clean, scalable code. We work in sprints with regular check-ins so you're always in the loop.",
+    desc: 'Our engineering team brings the design to life using clean, scalable code. We work in agile sprints with regular check-ins to keep you in the loop.',
     details: [
       'Frontend & Backend Dev',
       'API Integration',
       'Code Reviews',
       'Sprint Demos',
     ],
+    color: 'navy',
+    bgColor: 'bg-[var(--color-navy)]',
+    glowColor: 'bg-[var(--color-navy)]/20',
+    borderColor: 'border-[var(--color-navy)]',
+    boxBg: 'bg-[var(--color-navy)]/15',
+    dotColor: 'bg-[var(--color-navy)]',
+    checkColor: 'text-[var(--color-navy)]'
   },
   {
     number: '04',
-    title: 'Testing & QA',
-    desc: 'We rigorously test everything across devices and browsers. We check for bugs, performance bottlenecks, and security vulnerabilities.',
+    icon: Rocket,
+    title: 'Testing & Launch',
+    desc: 'Before launch, we rigorously test across devices, browsers, and scenarios. We check for bugs, performance issues, and security vulnerabilities.',
     details: [
-      'Unit & Integration Testing',
+      'Quality Assurance',
       'Cross-browser Testing',
-      'Performance Audits',
-      'Security Scanning',
+      'Performance Optimization',
+      'Deployment',
     ],
+    color: 'teal',
+    bgColor: 'bg-[var(--color-teal)]',
+    glowColor: 'bg-[var(--color-teal)]/20',
+    borderColor: 'border-[var(--color-teal)]',
+    boxBg: 'bg-[var(--color-teal-light)]',
+    dotColor: 'bg-[var(--color-teal)]',
+    checkColor: 'text-[var(--color-teal)]'
   },
   {
     number: '05',
-    title: 'Launch & Support',
-    desc: 'We handle the deployment process to ensure a smooth go-live. After launch, we provide ongoing support and maintenance.',
+    icon: Headphones,
+    title: 'Support & Growth',
+    desc: "Our relationship doesn't end at launch. We provide ongoing support, monitoring, and optimization to ensure your digital product continues to thrive.",
     details: [
-      'Deployment Strategy',
-      'DNS Configuration',
-      'Training',
       '24/7 Monitoring',
+      'Regular Updates',
+      'Performance Analytics',
+      'Feature Enhancements',
     ],
+    color: 'gold',
+    bgColor: 'bg-[var(--color-gold)]',
+    glowColor: 'bg-[var(--color-gold)]/20',
+    borderColor: 'border-[var(--color-gold)]',
+    boxBg: 'bg-[var(--color-gold-light)]',
+    dotColor: 'bg-[var(--color-gold)]',
+    checkColor: 'text-[var(--color-gold)]'
   },
+];
+
+const timeline = [
+  { phase: 'Discovery', duration: '1-2 weeks' },
+  { phase: 'Design', duration: '2-3 weeks' },
+  { phase: 'Development', duration: '4-8 weeks' },
+  { phase: 'Testing', duration: '1-2 weeks' },
+  { phase: 'Launch', duration: '1 week' },
 ];
 ---
 
-<Layout>
+<Layout title="Our Process">
+  <!-- Hero Header -->
   <Section bg="navy" class="text-center">
-    <div
-      class="absolute inset-0 opacity-10 bg-[url('https://www.transparenttextures.com/patterns/cubes.png')]"
-    />
-    <SectionLabel>Our Process</SectionLabel>
+    <div class="animate-fade-in">
+      <SectionLabel>Our Process</SectionLabel>
       <Heading as="h1" class="text-white mb-6">
-        How We Work
+        From Concept to Launch
       </Heading>
-      <Text class="text-slate-300">
-        A transparent, collaborative approach designed to deliver excellence
-        on time and on budget.
+      <Text class="text-slate-300 text-lg">
+        A transparent, collaborative approach designed to deliver
+        excellence on time and on budget. Here's exactly how we work.
       </Text>
+    </div>
   </Section>
 
-  <Section bg="light">
-    <div class="max-w-5xl mx-auto">
-      <div class="space-y-16">
+  <!-- Process Steps -->
+  <Section>
+    <div class="max-w-6xl mx-auto">
+      <div class="space-y-24">
         {steps.map((step, index) => (
-          <div
-            class="relative opacity-0 translate-y-5 transition-all duration-700 ease-out data-[in-view]:opacity-100 data-[in-view]:translate-y-0"
-            data-in-view={false}
-            style={`transition-delay: ${index * 0.1}s;`}
-          >
-            <div class="flex gap-8 items-start">
-              <!-- Timeline marker -->
-              <div class="relative flex flex-col items-center shrink-0">
-                <div class="w-16 h-16 bg-white border-4 border-gold rounded-full shadow-lg flex items-center justify-center z-10">
-                  <span class="text-navy font-bold text-lg">
-                    {step.number}
-                  </span>
+          <div class="relative animate-on-scroll" data-delay={index * 100}>
+            <div class={`grid grid-cols-1 lg:grid-cols-2 gap-12 items-center ${index % 2 === 1 ? 'lg:grid-cols-[1fr_auto]' : 'lg:grid-cols-[auto_1fr]'}`}>
+              <!-- Step Number & Icon -->
+              <div class={`flex items-center justify-center lg:justify-start ${index % 2 === 1 ? 'lg:order-2' : ''}`}>
+                <div class="relative">
+                  <div class={`absolute inset-0 ${step.glowColor} rounded-3xl blur-xl opacity-50`}></div>
+                  <div class={`relative bg-white rounded-3xl p-12 shadow-xl border-4 ${step.borderColor}`}>
+                    <div class={`w-20 h-20 ${step.bgColor} rounded-2xl flex items-center justify-center mb-6 mx-auto`}>
+                      <step.icon class="h-10 w-10 text-white" />
+                    </div>
+                    <div class="text-6xl font-bold text-slate-100 text-center">
+                      {step.number}
+                    </div>
+                  </div>
                 </div>
-                {index < steps.length && (
-                  <div class="w-[2px] h-full bg-gold/30 absolute top-16"></div>
-                )}
               </div>
 
               <!-- Content -->
-              <div class="flex-1 bg-white p-8 rounded-lg shadow-md border-l-4 border-teal hover:shadow-xl transition-shadow">
-                <h3 class="text-2xl font-bold text-navy mb-4">
+              <div class={index % 2 === 1 ? 'lg:order-1 lg:text-right' : ''}>
+                <h3 class="text-3xl font-bold text-[var(--color-navy)] mb-4">
                   {step.title}
                 </h3>
-                <p class="text-slate-600 mb-6 leading-relaxed">
+                <p class="text-slate-600 text-lg mb-8 leading-relaxed">
                   {step.desc}
                 </p>
 
-                <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
-                  {step.details.map((detail) => (
-                    <div class="flex items-center space-x-2 text-sm text-slate-500">
-                      <span class="w-1.5 h-1.5 bg-teal rounded-full"></span>
-                      <span>{detail}</span>
-                    </div>
-                  ))}
+                <div class={`p-6 rounded-xl border ${step.boxBg}`}>
+                  <h4 class="font-bold text-[var(--color-navy)] mb-4 flex items-center gap-2">
+                    <CheckCircle2 class={`h-5 w-5 ${step.checkColor}`} />
+                    What's Included:
+                  </h4>
+                  <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                    {step.details.map((detail) => (
+                      <div class="flex items-center space-x-2 text-slate-700">
+                        <div class={`w-1.5 h-1.5 ${step.dotColor} rounded-full`}></div>
+                        <span class="text-sm font-medium">{detail}</span>
+                      </div>
+                    ))}
+                  </div>
                 </div>
               </div>
             </div>
+
+            <!-- Connecting Line -->
+            {index < steps.length - 1 && (
+              <div class="hidden lg:block absolute left-1/2 -bottom-12 transform -translate-x-1/2">
+                <ArrowRight class="h-8 w-8 text-[var(--color-gold)] rotate-90" />
+              </div>
+            )}
           </div>
         ))}
       </div>
     </div>
   </Section>
-
-  <Section bg="navy" class="text-center" paddingBottom>
-    <Heading class="text-white mb-6">Ready to get started?</Heading>
-    <a href="/contact">
-      <Button variant="primary" size="lg">
-        Get a Quote
-      </Button>
-    </Link>
+  
+  <!-- Call to Action -->
+  <Section bg="teal" class="py-24" paddingBottom>
+    <div class="max-w-4xl mx-auto px-4 text-center relative z-10">
+      <Heading class="mb-6 text-white">
+        Ready to start your journey?
+      </Heading>
+      <p class="text-xl text-white/90 mb-10">
+        Let's discuss your project and create a custom roadmap tailored to
+        your needs.
+      </p>
+      <a href="/contact">
+        <Button variant="secondary" size="lg" withArrow> Get Started Today </Button>
+      </a>
+    </div>
   </Section>
 </Layout>
-
-<script>
-  // Intersection Observer for scroll-triggered animations (replaces framer-motion whileInView)
-  const observerOptions = {
-    threshold: 0.1,
-    rootMargin: '0px 0px -50px 0px'
-  };
-
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.setAttribute('data-in-view', 'true');
-        // Optional: unobserve after animation
-        // observer.unobserve(entry.target);
-      }
-    });
-  }, observerOptions);
-
-  document.querySelectorAll('[data-in-view]').forEach(el => {
-    observer.observe(el);
-  });
-</script>
-
-<style>
-  /* Optional: Custom Tailwind-compatible animations if needed */
-</style>
