@@ -2,10 +2,11 @@
 import Layout from "../layouts/Layout.astro";
 import Heading from "../components/ui/Heading.astro";
 import Text from "../components/ui/Text.astro";
+import Button from "../components/ui/Button.astro";
 import Section from "../components/ui/Section.astro";
 import SectionLabel from "../components/ui/SectionLabel.astro";
 import ContactForm from "../components/ContactForm.astro";
-import { Mail, Phone, MapPin, Calendar, CheckCircle } from "lucide-astro";
+import { Mail, Phone } from "lucide-astro";
 ---
 
 <Layout>
@@ -16,7 +17,7 @@ import { Mail, Phone, MapPin, Calendar, CheckCircle } from "lucide-astro";
     </div>
     <SectionLabel>Contact Us</SectionLabel>
     <Heading as="h1" class="text-white mb-6"> Let's Talk Business </Heading>
-    <Text class="text-slate-300">
+    <Text class="text-slate-300 mb-10">
       Ready to start your project? Fill out the form below or book a call
       directly.
     </Text>
@@ -35,7 +36,7 @@ import { Mail, Phone, MapPin, Calendar, CheckCircle } from "lucide-astro";
     </div>
   </Section>
 
-  <Section bg="light" paddingBottom>
+  <Section bg="light">
     <div class="grid grid-cols-1 lg:grid-cols-2 gap-16">
       <div>
         <Heading class="mb-6">Get in Touch</Heading>
@@ -67,6 +68,22 @@ import { Mail, Phone, MapPin, Calendar, CheckCircle } from "lucide-astro";
       </div>
 
       <ContactForm />
+    </div>
+  </Section>
+
+  <!-- Call to Action -->
+  <Section bg="teal" class="md:pb-1">
+    <div class="max-w-4xl mx-auto px-4 text-center relative z-10">
+      <Heading class="mb-6 text-white"> Ready to start your journey? </Heading>
+      <p class="text-xl text-white/90 mb-10">
+        Let's discuss your project and create a custom roadmap tailored to your
+        needs.
+      </p>
+      <a href="/contact">
+        <Button variant="secondary" size="lg" withArrow>
+          Get Started Today
+        </Button>
+      </a>
     </div>
   </Section>
 </Layout>

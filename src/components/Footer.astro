@@ -1,4 +1,6 @@
 ---
+import Button from "./ui/Button.astro";
+import Heading from "./ui/Heading.astro";
 import {
   Anchor,
   Mail,
@@ -20,132 +22,163 @@ const serviceLinks = [
 ];
 ---
 
-<!-- MAKE SURE TO ADD A paddingBottom ATTRIBUTE TO THE LAST SECTION BEFORE THE FOOTER ON EACH PAGE -->
-<footer class="relative bg-navy text-white pt-16 pb-8">
-  <svg
-    class="absolute top-0 left-0 w-full h-20 -mt-20 translate-y-[1px]"
-    viewBox="0 0 1920 188"
-    preserveAspectRatio="none"
-  >
-    <path
-      d="M1920 45.8671C1835.33 45.8671 1715.47 60.6671 1549.2 104.534C1115.6 218.4 932.267 0.000366211 466.533 0.000366211C218.933 0.000366211 172.8 45.8671 0.133333 45.8671L0 187.934H1920V45.8671Z"
-      fill="#1A304D"></path>
-  </svg>
-
-  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-    <div class="grid grid-cols-1 md:grid-cols-4 gap-12 mb-12">
-      <!-- Brand -->
-      <div class="space-y-4">
-        <div class="flex items-center space-x-2">
-          <Anchor class="h-6 w-6 text-gold" />
-          <span class="text-xl font-heading font-bold text-white tracking-wide">
-            <span class="text-teal">DOCKSIDE </span>WEB
-          </span>
-        </div>
-        <p class="text-slate-400 text-sm leading-relaxed">
-          Precision hand-coded websites built for small business performance.
-          Your dedicated partner in navigating the digital landscape.
-        </p>
-      </div>
-
-      <!-- Quick Links -->
-      <div>
-        <h4 class="text-gold font-bold uppercase tracking-wider text-sm mb-6">
-          Navigation
-        </h4>
-        <ul class="space-y-3">
-          {
-            navigationLinks.map((item) => (
-              <li>
-                <a
-                  href={item === "Home" ? "/" : `/${item.toLowerCase()}`}
-                  class="text-slate-300 hover:text-teal transition-colors text-sm"
-                >
-                  {item}
-                </a>
-              </li>
-            ))
-          }
-        </ul>
-      </div>
-
-      <!-- Services -->
-      <div>
-        <h4 class="text-gold font-bold uppercase tracking-wider text-sm mb-6">
-          Services
-        </h4>
-        <ul class="space-y-3">
-          {
-            serviceLinks.map((item) => (
-              <li>
-                <a
-                  href="/services"
-                  class="text-slate-300 hover:text-teal transition-colors text-sm"
-                >
-                  {item}
-                </a>
-              </li>
-            ))
-          }
-        </ul>
-      </div>
-
-      <!-- Contact -->
-      <div>
-        <h4 class="text-gold font-bold uppercase tracking-wider text-sm mb-6">
-          Contact
-        </h4>
-        <ul class="space-y-4">
-          <li class="flex items-start space-x-3 text-slate-300 text-sm">
-            <Mail class="h-5 w-5 text-teal shrink-0" />
-            <span>info@docksideweb.com</span>
-          </li>
-          <li class="flex items-start space-x-3 text-slate-300 text-sm">
-            <Phone class="h-5 w-5 text-teal shrink-0" />
-            <span>+1 (443) 844-7850</span>
-          </li>
-          <li class="flex items-start space-x-3 text-slate-300 text-sm">
-            <MapPin class="h-5 w-5 text-teal shrink-0" />
-            <span>Baltimore, MD</span>
-          </li>
-          <li class="flex items-start space-x-3 text-slate-300 text-sm">
-            <MapPin class="h-5 w-5 text-teal shrink-0" />
-            <span>Charleston, SC</span>
-          </li>
-        </ul>
-      </div>
-    </div>
-
-    <!-- Divider -->
-    <div
-      class="border-t border-white/10 pt-8 flex flex-col md:flex-row justify-between items-center"
+<div class="w-full bg-white">
+  <div class="relative w-full overflow-hidden bg-teal">
+    <svg
+      class="relative block w-full h-[100px] md:h-[300px]"
+      style="z-index: 1"
+      viewBox="0 0 1440 320"
+      preserveAspectRatio="xMidYMid slice"
     >
-      <p class="text-slate-500 text-sm">
-        © {currentYear} MaritimeDev. All rights reserved.
-      </p>
-      <div class="flex space-x-6 mt-4 md:mt-0">
-        <a
-          href="#"
-          class="text-slate-400 hover:text-gold transition-colors"
-          aria-label="LinkedIn"
-        >
-          <Linkedin class="h-5 w-5" />
-        </a>
-        <a
-          href="#"
-          class="text-slate-400 hover:text-gold transition-colors"
-          aria-label="GitHub"
-        >
-          <Github class="h-5 w-5" />
-        </a>
-        <a
-          href="#"
-          class="text-slate-400 hover:text-gold transition-colors"
-          aria-label="Twitter"
-        >
-          <Twitter class="h-5 w-5" />
-        </a>
+      <!-- WAVE LAYERS -->
+      <!-- Background Wave (Lightest - Furthest/Horizon) -->
+      <path
+        fill="#91C9CF"
+        d="M0,180 C360,150 1080,210 1440,180 L1440,320 L0,320 Z"></path>
+
+      <path
+        fill="#5197A6"
+        d="M0,200 C240,160 480,240 720,200 C960,160 1200,240 1440,200 L1440,320 L0,320 Z"
+      ></path>
+
+      <image
+        href="/assets/lighthouse.svg"
+        class="scale-x-[-1]"
+        x="220"
+        y="20"
+        width="200"
+        height="200"
+        style="transform: scale(0.75); transform-origin: center bottom;"
+      />
+
+      <path
+        fill="#224769"
+        d="M0,230 C180,260 360,200 540,230 C720,260 900,200 1080,230 C1260,260 1350,220 1440,230 L1440,320 L0,320 Z"
+      ></path>
+
+      <!-- Foreground Wave (Darkest - Closest, Matches beginning of gradient for ooter) -->
+      <path
+        fill="#1e3556"
+        d="M0,260 C240,240 480,280 720,260 C960,240 1200,280 1440,260 L1440,320 L0,320 Z"
+      ></path>
+    </svg>
+  </div>
+
+  <footer
+    class="relative bg-gradient-to-b from-[#1e3556] to-[#1A304d] text-white pb-8 -mt-1"
+  >
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-8">
+      <div class="grid grid-cols-1 md:grid-cols-4 gap-12 mb-12">
+        <div class="space-y-4">
+          <div class="flex items-center space-x-2">
+            <Anchor class="h-6 w-6 text-gold" />
+            <span
+              class="text-xl font-heading font-bold text-white tracking-wide"
+            >
+              <span class="text-teal-400">DOCKSIDE </span>WEB
+            </span>
+          </div>
+          <p class="text-slate-400 text-sm leading-relaxed">
+            Precision hand-coded websites built for small business performance.
+            Your dedicated partner in navigating the digital landscape.
+          </p>
+        </div>
+
+        <div>
+          <h4 class="text-gold font-bold uppercase tracking-wider text-sm mb-6">
+            Navigation
+          </h4>
+          <ul class="space-y-3">
+            {
+              navigationLinks.map((item) => (
+                <li>
+                  <a
+                    href={item === "Home" ? "/" : `/${item.toLowerCase()}`}
+                    class="text-slate-300 hover:text-teal-400 transition-colors text-sm"
+                  >
+                    {item}
+                  </a>
+                </li>
+              ))
+            }
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="text-gold font-bold uppercase tracking-wider text-sm mb-6">
+            Services
+          </h4>
+          <ul class="space-y-3">
+            {
+              serviceLinks.map((item) => (
+                <li>
+                  <a
+                    href="/services"
+                    class="text-slate-300 hover:text-teal-400 transition-colors text-sm"
+                  >
+                    {item}
+                  </a>
+                </li>
+              ))
+            }
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="text-gold font-bold uppercase tracking-wider text-sm mb-6">
+            Contact
+          </h4>
+          <ul class="space-y-4">
+            <li class="flex items-start space-x-3 text-slate-300 text-sm">
+              <Mail class="h-5 w-5 text-teal-400 shrink-0" />
+              <span>info@docksideweb.com</span>
+            </li>
+            <li class="flex items-start space-x-3 text-slate-300 text-sm">
+              <Phone class="h-5 w-5 text-teal-400 shrink-0" />
+              <span>+1 (443) 844-7850</span>
+            </li>
+            <li class="flex items-start space-x-3 text-slate-300 text-sm">
+              <MapPin class="h-5 w-5 text-teal-400 shrink-0" />
+              <span>Baltimore, MD</span>
+            </li>
+            <li class="flex items-start space-x-3 text-slate-300 text-sm">
+              <MapPin class="h-5 w-5 text-teal-400 shrink-0" />
+              <span>Charleston, SC</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div
+        class="border-t border-white/10 pt-8 flex flex-col md:flex-row justify-between items-center"
+      >
+        <p class="text-slate-500 text-sm">
+          © {currentYear} Dockside Web Solutions. All rights reserved.
+        </p>
+        <div class="flex space-x-6 mt-4 md:mt-0">
+          <a
+            href="#"
+            class="text-slate-400 hover:text-yellow-500 transition-colors"
+            aria-label="LinkedIn"
+          >
+            <Linkedin class="h-5 w-5" />
+          </a>
+          <a
+            href="#"
+            class="text-slate-400 hover:text-yellow-500 transition-colors"
+            aria-label="GitHub"
+          >
+            <Github class="h-5 w-5" />
+          </a>
+          <a
+            href="#"
+            class="text-slate-400 hover:text-yellow-500 transition-colors"
+            aria-label="Twitter"
+          >
+            <Twitter class="h-5 w-5" />
+          </a>
+        </div>
       </div>
     </div>
-  </div>
-</footer>
+  </footer>
+</div>

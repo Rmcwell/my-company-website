@@ -192,7 +192,7 @@ const trustSignals = [
       </Text>
     </div>
 
-    <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-12">
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
       {
         services.map((service) => (
           <div class="p-8 rounded-2xl group border-slate-200 border-2 bg-white hover:bg-navy hover:border-navy transition-all duration-300">
@@ -299,19 +299,6 @@ const trustSignals = [
     </div>
   </Section>
 
-  <!-- Pricing -->
-  <Section bg="light">
-    <div class="text-center max-w-3xl mx-auto mb-16">
-      <SectionLabel>Pricing Plans</SectionLabel>
-      <Heading> Simple, Transparent Pricing Plans </Heading>
-      <Text>
-        Choose the plan that fits your small business needs. No hidden fees, no
-        surprises.
-      </Text>
-    </div>
-    <PricingPlans />
-  </Section>
-
   <!-- Process Preview -->
   <Section bg="navy" class="relative">
     <div class="text-center max-w-3xl mx-auto mb-16 relative z-10">
@@ -346,42 +333,27 @@ const trustSignals = [
     </div>
   </Section>
 
-  <!-- Trust Signals -->
+  <!-- Pricing -->
   <Section bg="light">
-    <div class="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
-      <div class="p-6">
-        <Shield class="h-12 w-12 text-gold mx-auto mb-4" />
-        <div class="text-4xl font-bold text-navy mb-2">100%</div>
-        <div class="text-slate-600">Satisfaction Guaranteed</div>
-      </div>
-      <div class="p-6 border-l border-r border-slate-200">
-        <Zap class="h-12 w-12 text-gold mx-auto mb-4" />
-        <div class="text-4xl font-bold text-navy mb-2">98+</div>
-        <div class="text-slate-600">Google PageSpeed Score</div>
-      </div>
-      <div class="p-6">
-        <CheckCircle class="h-12 w-12 text-gold mx-auto mb-4" />
-        <div class="text-4xl font-bold text-navy mb-2">2-4 Weeks</div>
-        <div class="text-slate-600">Average Launch Time</div>
-      </div>
+    <div class="text-center max-w-3xl mx-auto mb-16">
+      <SectionLabel>Pricing Plans</SectionLabel>
+      <Heading> Simple, Transparent Pricing Plans </Heading>
+      <Text>
+        Choose the plan that fits your small business needs. No hidden fees, no
+        surprises.
+      </Text>
     </div>
+    <PricingPlans />
   </Section>
 
-  <!-- CTA -->
-  <Section bg="teal" class="py-24" paddingBottom>
-    <div class="max-w-4xl mx-auto px-4 text-center relative z-10">
-      <h2 class="text-4xl md:text-5xl font-heading font-bold text-white mb-6">
-        Ready to Grow Your Business Online?
-      </h2>
-      <p class="text-xl text-white/90 mb-10">
-        Let's talk about your website. Get a free quote and see how we can help
-        your small business succeed online.
-      </p>
-      <a href="/contact">
-        <Button variant="secondary" size="lg"> Start Your Project </Button>
-      </a>
-    </div>
-  </Section>
+  <!-- <Section bg="teal" class="text-center">
+      <Heading class="text-white"> Simple, Transparent Pricing Plans </Heading>
+      <Text>
+        Choose the plan that fits your small business needs. No hidden fees, no
+        surprises.
+      </Text>
+      <Button> JOIN NOW </Button>
+  </Section> -->
 
   <style>
     @keyframes fade-in-up {

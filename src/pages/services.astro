@@ -102,7 +102,7 @@ const services: ServiceFeature[] = [
     <Heading as="h1" class="text-white mb-6">
       Expertise That Runs Deep
     </Heading>
-    <Text>
+    <Text class="mb-10">
       Comprehensive digital solutions tailored to your specific needs. We don't
       just build; we partner in your success.
     </Text>
@@ -179,14 +179,19 @@ const services: ServiceFeature[] = [
     </div>
   </Section>
 
-  <Section bg="teal" class="text-center" paddingBottom>
-    <Heading class="text-white mb-6">Not sure what you need?</Heading>
-    <Text class="text-slate-300 mb-8 max-w-2xl mx-auto">
-      Every project is unique. Let's hop on a call to discuss your specific
-      challenges and find the right solution.
-    </Text>
-    <a href="/contact">
-      <Button variant="primary">Schedule a Consultation</Button>
-    </a>
+  <!-- Call to Action -->
+  <Section bg="teal" class="md:pb-1">
+    <div class="max-w-4xl mx-auto px-4 text-center relative z-10">
+      <Heading class="mb-6 text-white"> Ready to start your journey? </Heading>
+      <p class="text-xl text-white/90 mb-10">
+        Let's discuss your project and create a custom roadmap tailored to your
+        needs.
+      </p>
+      <a href="/contact">
+        <Button variant="secondary" size="lg" withArrow>
+          Get Started Today
+        </Button>
+      </a>
+    </div>
   </Section>
 </Layout>

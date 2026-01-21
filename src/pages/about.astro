@@ -2,6 +2,7 @@
 import Layout from "../layouts/Layout.astro";
 import Heading from "../components/ui/Heading.astro";
 import Text from "../components/ui/Text.astro";
+import Button from "../components/ui/Button.astro";
 import Section from "../components/ui/Section.astro";
 import SectionLabel from "../components/ui/SectionLabel.astro";
 
@@ -39,7 +40,7 @@ const coreValues = [
     <Heading as="h1" class="text-white mb-6">
       Navigators of the Digital Realm
     </Heading>
-    <Text class="text-slate-300">
+    <Text class="text-slate-300 mb-10">
       We are a team of engineers, designers, and strategists dedicated to
       building the web's future.
     </Text>
@@ -98,7 +99,7 @@ const coreValues = [
     </div>
   </Section>
 
-  <Section bg="light" paddingBottom>
+  <Section bg="light">
     <div class="text-center max-w-3xl mx-auto mb-16">
       <Heading>Core Values</Heading>
       <Text class="mt-4"> The compass points that guide our decisions. </Text>
@@ -188,6 +189,22 @@ const coreValues = [
           </div>
         ))
       }
+    </div>
+  </Section>
+
+  <!-- Call to Action -->
+  <Section bg="teal" class="md:pb-1">
+    <div class="max-w-4xl mx-auto px-4 text-center relative z-10">
+      <Heading class="mb-6 text-white"> Ready to start your journey? </Heading>
+      <p class="text-xl text-white/90 mb-10">
+        Let's discuss your project and create a custom roadmap tailored to your
+        needs.
+      </p>
+      <a href="/contact">
+        <Button variant="secondary" size="lg" withArrow>
+          Get Started Today
+        </Button>
+      </a>
     </div>
   </Section>
 </Layout>

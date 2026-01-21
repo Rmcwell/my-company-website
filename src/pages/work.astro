@@ -64,7 +64,7 @@ const projects: Project[] = [
     </div>
     <SectionLabel>Our Work</SectionLabel>
     <Heading as="h1" class="text-white mb-6"> Proven Results </Heading>
-    <Text>
+    <Text class="text-slate-300 pb-10">
       A selection of projects where we've helped clients navigate complex
       digital challenges.
     </Text>
@@ -152,14 +152,19 @@ const projects: Project[] = [
     </div>
   </Section>
 
-  <Section bg="light" class="text-center" paddingBottom>
-    <Heading class="mb-6">Have a project in mind?</Heading>
-    <Text class="mb-8">
-      We love tackling new challenges. Let's see if we're a good fit for your
-      next big idea.
-    </Text>
-    <a href="/contact">
-      <Button variant="primary" size="lg"> Start a Conversation </Button>
-    </a>
+  <!-- Call to Action -->
+  <Section bg="teal" class="md:pb-1">
+    <div class="max-w-4xl mx-auto px-4 text-center relative z-10">
+      <Heading class="mb-6 text-white"> Ready to start your journey? </Heading>
+      <p class="text-xl text-white/90 mb-10">
+        Let's discuss your project and create a custom roadmap tailored to your
+        needs.
+      </p>
+      <a href="/contact">
+        <Button variant="secondary" size="lg" withArrow>
+          Get Started Today
+        </Button>
+      </a>
+    </div>
   </Section>
 </Layout>

@@ -3,10 +3,9 @@ interface Props {
   class?: string;
   bg?: "white" | "light" | "navy" | "teal";
   id?: string;
-  paddingBottom?: boolean;
 }
 
-const { class: className = "", bg = "white", id, paddingBottom } = Astro.props;
+const { class: className = "", bg = "white", id } = Astro.props;
 
 const bgStyles = {
   white: "bg-white",
@@ -15,14 +14,12 @@ const bgStyles = {
   teal: "bg-teal text-white",
 };
 
-const sectionClasses = `${bgStyles[bg]} py-16 md:py-24 ${className} relative`;
+const sectionClasses = `${bgStyles[bg]} py-12 md:py-20 ${className} relative`;
 ---
 
-<!-- This needs to be styled like this because it was the only way I could get paddingBottom to work -->
 <section
   id={id}
   class={sectionClasses}
-  style={paddingBottom ? `padding-bottom: 150px` : undefined}
 >
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
     <slot />
