@@ -2,7 +2,6 @@
 import Layout from "../layouts/Layout.astro";
 import Heading from "../components/ui/Heading.astro";
 import Text from "../components/ui/Text.astro";
-import Button from "../components/ui/Button.astro";
 import Section from "../components/ui/Section.astro";
 import SectionLabel from "../components/ui/SectionLabel.astro";
 import ContactForm from "../components/ContactForm.astro";
@@ -46,44 +45,36 @@ import { Mail, Phone } from "lucide-astro";
         </Text>
 
         <div class="space-y-8 mb-12">
-          <div class="flex items-start space-x-4">
-            <div class="bg-teal/10 p-3 rounded-lg">
-              <Mail class="h-6 w-6 text-teal" />
+          <a href="mailto:info@docksideweb.com" class="group flex items-start space-x-4 block no-underline">
+            <div class="bg-teal/10 p-3 rounded-lg transition-colors group-hover:bg-yellow-500/10">
+              <Mail
+                class="h-6 w-6 text-teal transition-colors group-hover:text-gold"
+              />
             </div>
             <div>
               <h4 class="font-bold text-navy">Email Us</h4>
-              <p class="text-slate-600">hello@maritimedev.com</p>
+              <p>
+                info@docksideweb.com
+              </p>
             </div>
-          </div>
-          <div class="flex items-start space-x-4">
-            <div class="bg-teal/10 p-3 rounded-lg">
-              <Phone class="h-6 w-6 text-teal" />
+          </a>
+
+          <a href="mailto:info@docksideweb.com" class="group flex items-start space-x-4 block no-underline">
+            <div class="bg-teal/10 p-3 rounded-lg transition-colors group-hover:bg-yellow-500/10">
+              <Phone
+                class="h-6 w-6 text-teal transition-colors group-hover:text-gold"
+              />
             </div>
             <div>
               <h4 class="font-bold text-navy">Call Us</h4>
-              <p class="text-slate-600">+1 (555) 123-4567</p>
+              <p>
+                +1 (443) 844-7850
+              </p>
             </div>
-          </div>
+          </a>
         </div>
       </div>
-
       <ContactForm />
-    </div>
-  </Section>
-
-  <!-- Call to Action -->
-  <Section bg="teal" class="md:pb-1">
-    <div class="max-w-4xl mx-auto px-4 text-center relative z-10">
-      <Heading class="mb-6 text-white"> Ready to start your journey? </Heading>
-      <p class="text-xl text-white/90 mb-10">
-        Let's discuss your project and create a custom roadmap tailored to your
-        needs.
-      </p>
-      <a href="/contact">
-        <Button variant="secondary" size="lg" withArrow>
-          Get Started Today
-        </Button>
-      </a>
     </div>
   </Section>
 </Layout>

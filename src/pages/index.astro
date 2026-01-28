@@ -11,11 +11,9 @@ import {
   ArrowRight,
   Smartphone,
   CheckCircle,
-  Shield,
-  Zap,
-  Search,
   RefreshCw,
   Rabbit,
+  Coffee,
 } from "lucide-astro";
 
 const services = [
@@ -42,14 +40,14 @@ const services = [
     ],
   },
   {
-    icon: Search,
-    title: "Built for Google",
-    subtitle: "SEO isn't optional—it's built in",
-    desc: "Semantic HTML, proper heading structure, and accessibility best practices. Your site is built to rank, not just look good.",
+    icon: Coffee,
+    title: "Hands-Off Hosting",
+    subtitle: "You run your business, we run the site",
+    desc: "Stop worrying about servers, renewals, or security patches. We manage the entire technical stack from top to bottom so you never have to touch a line of code.",
     bullets: [
-      "Clean, crawlable code structure",
-      "Optimized meta tags and descriptions",
-      "Accessibility for all users and screen readers",
+      "Secure hosting and SSL certificates included",
+      "24/7 uptime monitoring and daily backups",
+      "Domain management and renewal tracking",
     ],
   },
   {
@@ -62,6 +60,33 @@ const services = [
       "Optimized meta tags and descriptions",
       "Accessibility for all users and screen readers",
     ],
+  },
+];
+
+const benefits = [
+  {
+    title: "Custom Designed",
+    desc: "Our designs are made by an in-house team, tailored specifically to your brand and business goals.",
+  },
+  {
+    title: "Secure",
+    desc: "This website is secure because there is no backend FIX",
+  },
+  {
+    title: "SEO Optimized",
+    desc: "We explain SEO clearly, how it works, and what we can do to get you ranking on Google.",
+  },
+  {
+    title: "Mobile Ready",
+    desc: "Every website works perfectly on phones and tablets—because that's where your customers are.",
+  },
+  {
+    title: "Ongoing Support",
+    desc: "Call or text us anytime. When you reach out, you get the owner and developer directly.",
+  },
+  {
+    title: "Money Back Guarantee",
+    desc: "If we can't design something you like, you get your money back. We stand by our work.",
   },
 ];
 
@@ -82,12 +107,6 @@ const processSteps = [
     title: "Support",
     desc: "We provide ongoing updates and performance checks to keep your site working hard for you.",
   },
-];
-
-const trustSignals = [
-  { icon: Shield, value: "100%", label: "Secure & Reliable" },
-  { icon: Zap, value: "98+", label: "Google PageSpeed Score" },
-  { icon: CheckCircle, value: "50+", label: "Successful Projects" },
 ];
 ---
 
@@ -225,75 +244,90 @@ const trustSignals = [
       }
     </div>
   </Section>
+
   <!-- Why Choose Us -->
-  <Section>
-    <div
-      class="absolute top-0 right-0 w-96 h-96 bg-teal/5 rounded-full blur-3xl"
-    >
-    </div>
-    <div
-      class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center relative z-10"
-    >
-      <div class="relative">
+  <Section class="bg-white">
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+      {/* Left side - Large professional image */}
+      <div class="relative animate-fade-in-left ">
         <div
-          class="absolute -top-4 -left-4 w-24 h-24 border-t-4 border-l-4 border-gold/30"
+          class="relative rounded-3xl overflow-hidden shadow-2xl
+                    w-full h-48 lg:h-auto"
         >
+          <img
+            src="https://images.unsplash.com/photo-1556761175-b413da4baf72?auto=format&fit=crop&q=80&w=1000"
+            alt="Professional team member"
+            class="w-full h-full object-cover lg:aspect-[3/4]"
+          />
         </div>
-        <div
-          class="absolute -bottom-4 -right-4 w-24 h-24 border-b-4 border-r-4 border-gold/30"
-        >
-        </div>
-        <img
-          src="https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&q=80&w=1000"
-          alt="Small business owner"
-          class="rounded-lg shadow-2xl relative z-10 w-full h-auto object-cover aspect-[4/3]"
-        />
       </div>
 
+      {/* Right side - Benefits grid */}
       <div>
-        <SectionLabel>Why Choose Us</SectionLabel>
-        <Heading class="mb-6">
-          Built for Small Business Owners, <br />
-          Not Big Corporations
-        </Heading>
-        <Text class="mb-8">
-          We understand the unique challenges small businesses face online.
-          That's why we create websites that are affordable, easy to manage, and
-          designed to help you compete with the big players.
-        </Text>
-
-        <div class="space-y-6">
+        <div class="mb-12 animate-fade-in-up">
+          <SectionLabel>What We Offer</SectionLabel>
+          <Heading class="mb-4">
+            Websites Built for Small Business Success
+          </Heading>
+          <Text>
+            We offer transparent pricing, fast turnaround, and ongoing support.
+            Everything you need to succeed online, with no surprises.
+          </Text>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
           {
-            [
-              {
-                title: "Affordable Pricing",
-                desc: "Professional websites that fit your budget, with transparent pricing and no hidden fees.",
-                color: "bg-teal/10 border-teal/20",
-              },
-              {
-                title: "Quick Turnaround",
-                desc: "Get your website live in weeks, not months. We know time is money for small businesses.",
-                color: "bg-gold/10 border-gold/20",
-              },
-              {
-                title: "Personal Support",
-                desc: "Work directly with our team. No call centers, no ticket systems—just real people who care.",
-                color: "bg-navy/10 border-navy/20",
-              },
-            ].map((item, i) => (
+            benefits.map((benefit, index) => (
               <div
-                class={`flex items-start space-x-4 p-4 rounded-lg border ${item.color} transition-all hover:shadow-md`}
+                class="space-y-2 animate-fade-in-up"
+                style={`animation-delay: ${index * 100}ms`}
               >
-                <div class="mt-1">
-                  <CheckCircle class="h-6 w-6 text-teal" />
-                </div>
-                <div>
-                  <h4 class="text-lg font-bold text-navy">{item.title}</h4>
-                  <p class="text-slate-600">{item.desc}</p>
+                <div class="flex items-start space-x-3">
+                  <svg
+                    class="h-6 w-6 text-teal shrink-0 mt-0.5"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"
+                    />
+                  </svg>
+                  <div>
+                    <h4 class="font-bold text-navy text-lg mb-1">
+                      {benefit.title}
+                    </h4>
+                    <p class="text-slate-600 text-sm leading-relaxed">
+                      {benefit.desc}
+                    </p>
+                  </div>
                 </div>
               </div>
             ))
           }
+        </div>
+
+        {/* CTA Button */}
+        <div class="mt-10 animate-fade-in-up" style="animation-delay: 600ms">
+          <a href="/contact">
+            <Button variant="primary" size="lg">
+              Schedule a Call
+              <svg
+                class="ml-2 h-5 w-5"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
+              </svg>
+            </Button>
+          </a>
         </div>
       </div>
     </div>
@@ -304,7 +338,7 @@ const trustSignals = [
     <div class="text-center max-w-3xl mx-auto mb-16 relative z-10">
       <SectionLabel>Our Process</SectionLabel>
       <Heading class="text-white">Charting the Course</Heading>
-      <Text class="mt-4 text-slate-300">
+      <Text class="mt-4">
         A simple, straightforward process designed for busy small business
         owners.
       </Text>
@@ -346,14 +380,21 @@ const trustSignals = [
     <PricingPlans />
   </Section>
 
-  <!-- <Section bg="teal" class="text-center">
-      <Heading class="text-white"> Simple, Transparent Pricing Plans </Heading>
-      <Text>
-        Choose the plan that fits your small business needs. No hidden fees, no
-        surprises.
-      </Text>
-      <Button> JOIN NOW </Button>
-  </Section> -->
+  <!-- Call to Action -->
+  <Section bg="teal" class="md:pb-1">
+    <div class="max-w-4xl mx-auto px-4 text-center relative z-10">
+      <Heading class="mb-6 text-white"> Ready to start your journey? </Heading>
+      <p class="text-xl text-white/90 mb-10">
+        Let's discuss your project and create a custom roadmap tailored to your
+        needs.
+      </p>
+      <a href="/contact">
+        <Button variant="secondary" size="lg" withArrow>
+          Get Started Today
+        </Button>
+      </a>
+    </div>
+  </Section>
 
   <style>
     @keyframes fade-in-up {

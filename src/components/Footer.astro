@@ -1,6 +1,4 @@
 ---
-import Button from "./ui/Button.astro";
-import Heading from "./ui/Heading.astro";
 import {
   Anchor,
   Mail,
@@ -16,9 +14,8 @@ const currentYear = new Date().getFullYear();
 const navigationLinks = ["Home", "Services", "Work", "Process", "About"];
 const serviceLinks = [
   "Web Development",
-  "App Development",
-  "UI/UX Design",
   "SEO & Performance",
+  "Maintenance & Support",
 ];
 ---
 
@@ -131,52 +128,56 @@ const serviceLinks = [
           <ul class="space-y-4">
             <li class="flex items-start space-x-3 text-slate-300 text-sm">
               <Mail class="h-5 w-5 text-teal-400 shrink-0" />
-              <span>info@docksideweb.com</span>
-            </li>
-            <li class="flex items-start space-x-3 text-slate-300 text-sm">
-              <Phone class="h-5 w-5 text-teal-400 shrink-0" />
-              <span>+1 (443) 844-7850</span>
-            </li>
-            <li class="flex items-start space-x-3 text-slate-300 text-sm">
-              <MapPin class="h-5 w-5 text-teal-400 shrink-0" />
-              <span>Baltimore, MD</span>
-            </li>
-            <li class="flex items-start space-x-3 text-slate-300 text-sm">
-              <MapPin class="h-5 w-5 text-teal-400 shrink-0" />
-              <span>Charleston, SC</span>
-            </li>
+              <a href="mailto:info@docksideweb.com" class="hover:text-teal-400">
+                info@docksideweb.com
+              </a>
+              </li>
+              <li class="flex items-start space-x-3 text-slate-300 text-sm">
+                <Phone class="h-5 w-5 text-teal-400 shrink-0" />
+                <a href="tel:+14438447850" class="hover:text-teal-400">
+                  +1 (443) 844-7850
+                </a>
+              </li>
+              <li class="flex items-start space-x-3 text-slate-300 text-sm">
+                <MapPin class="h-5 w-5 text-teal-400 shrink-0" />
+                <span>Baltimore, MD</span>
+              </li>
+              <li class="flex items-start space-x-3 text-slate-300 text-sm">
+                <MapPin class="h-5 w-5 text-teal-400 shrink-0" />
+                <span>Charleston, SC</span>
+              </li>
           </ul>
+          </div>
         </div>
-      </div>
 
-      <div
-        class="border-t border-white/10 pt-8 flex flex-col md:flex-row justify-between items-center"
-      >
-        <p class="text-slate-500 text-sm">
-          © {currentYear} Dockside Web Solutions. All rights reserved.
-        </p>
-        <div class="flex space-x-6 mt-4 md:mt-0">
-          <a
-            href="#"
-            class="text-slate-400 hover:text-yellow-500 transition-colors"
-            aria-label="LinkedIn"
-          >
-            <Linkedin class="h-5 w-5" />
-          </a>
-          <a
-            href="#"
-            class="text-slate-400 hover:text-yellow-500 transition-colors"
-            aria-label="GitHub"
-          >
-            <Github class="h-5 w-5" />
-          </a>
-          <a
-            href="#"
-            class="text-slate-400 hover:text-yellow-500 transition-colors"
-            aria-label="Twitter"
-          >
-            <Twitter class="h-5 w-5" />
-          </a>
+        <div
+          class="border-t border-white/10 pt-8 flex flex-col md:flex-row justify-between items-center"
+        >
+          <p class="text-slate-500 text-sm">
+            © {currentYear} Dockside Web Solutions. All rights reserved.
+          </p>
+          <div class="flex space-x-6 mt-4 md:mt-0">
+            <a
+              href="#"
+              class="text-slate-400 hover:text-yellow-500 transition-colors"
+              aria-label="LinkedIn"
+            >
+              <Linkedin class="h-5 w-5" />
+            </a>
+            <a
+              href="#"
+              class="text-slate-400 hover:text-yellow-500 transition-colors"
+              aria-label="GitHub"
+            >
+              <Github class="h-5 w-5" />
+            </a>
+            <a
+              href="#"
+              class="text-slate-400 hover:text-yellow-500 transition-colors"
+              aria-label="Twitter"
+            >
+              <Twitter class="h-5 w-5" />
+            </a>
         </div>
       </div>
     </div>

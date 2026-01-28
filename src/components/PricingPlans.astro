@@ -1,6 +1,5 @@
 ---
-import Button from "./ui/Button.astro";
-import { Check, X } from "lucide-astro";
+import { Check, Plus } from "lucide-astro";
 
 type Plan = {
   name: string;
@@ -8,9 +7,8 @@ type Plan = {
   payment: string;
   description: string;
   features: string[];
-  notIncluded: string[];
+  optionalFeatures: string[];
   highlighted: boolean;
-  disclaimer: boolean;
 };
 
 const pricingPlans: Plan[] = [
@@ -18,35 +16,35 @@ const pricingPlans: Plan[] = [
     name: "Monthly",
     price: "$150",
     payment: "Per Month",
-    description: "Most popular for growing businesses",
+    description:
+      "Best for businesses that want a professional site with zero upfront cost.",
     features: [
-      "Design and Development",
-      "Up to 6 pages",
-      "$100 one-time fee per page after 6",
-      "24/7 Support",
-      "Unlimited Edits *",
-      "Lifetime Updates *",
-      "Hosting, Domain & SSL",
+      "Custom website (up to 6 pages)",
+      "Unlimited minor content edits*",
+      "Hosting, domain, & SSL",
+      "2–3 business day turnaround",
+      "$100 one-time fee per page after the first 6",
     ],
-    notIncluded: [],
-    highlighted: true,
-    disclaimer: true,
+    optionalFeatures: [],
+    highlighted: true
   },
   {
-    name: "Full Cost",
+    name: "One-Time Website Build",
     price: "$2,500",
-    payment: "+$25/mo Hosting",
-    description: "Perfect for new businesses getting online",
+    payment: "One Time Cost",
+    description:
+      "Ideal for established businesses that want full ownership and no monthly commitment.",
     features: [
-      "Design and Development",
-      "Up to 6 pages",
-      "$100 one-time fee per page after 6",
-      "30 days support",
-      "+$50/mo Unlimited Edits Add-on",
+      "Custom website (up to 6 pages)",
+      "$100 one-time fee per page after the first 6",
     ],
-    notIncluded: ["24/7 Support", "Lifetime Updates"],
-    highlighted: false,
-    disclaimer: false,
+    optionalFeatures: [
+      "Optional $75/month website care plan",
+      "Hosting, domain, & SSL",
+      "Unlimited minor content edits*",
+      "2–3 business day turnaround",
+    ],
+    highlighted: false
   },
 ];
 ---
@@ -55,7 +53,7 @@ const pricingPlans: Plan[] = [
   {
     pricingPlans.map((plan) => (
       <div
-        class={`relative bg-light rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 ${
+        class={`relative bg-light rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 flex flex-col h-full ${
           plan.highlighted
             ? "border-4 border-teal-500"
             : "border border-slate-200"
@@ -69,7 +67,7 @@ const pricingPlans: Plan[] = [
           </div>
         )}
 
-        <div class="p-8">
+        <div class="p-8 flex-1">
           <h3 class="text-2xl font-bold text-slate-900 mb-2">{plan.name}</h3>
           <p class="text-slate-600 text-sm mb-6">{plan.description}</p>
 
@@ -102,26 +100,24 @@ const pricingPlans: Plan[] = [
                 <span class="text-slate-600 text-sm">{feature}</span>
               </div>
             ))}
-            {plan.notIncluded.length > 0 && (
+            {plan.optionalFeatures.length > 0 && (
               <>
                 <div class="border-t border-slate-200 my-4" />
-                {plan.notIncluded.map((feature) => (
-                  <div class="flex items-start space-x-3 opacity-50">
-                    <X class="h-5 w-5 text-slate-400 shrink-0 mt-0.5" />
-                    <span class="text-slate-500 text-sm">{feature}</span>
+                {plan.optionalFeatures.map((feature) => (
+                  <div class="flex items-start space-x-3">
+                    <Plus class="h-5 w-5 text-teal shrink-0 mt-0.5" />
+                    <span class="text-slate-600 text-sm">{feature}</span>
                   </div>
                 ))}
               </>
             )}
           </div>
         </div>
-        {plan.disclaimer && (
-          <span class="text-slate-500 text-sm text-center block px-8 mb-4">
-            * Unlimited edits and updates apply to completed pages only. New
-            pages are still billed at $100/page.
-          </span>
-        )}
       </div>
     ))
   }
 </div>
+<span class="text-slate-500 text-sm text-center block px-8 mt-8">
+  * Minor edits have a 2-3 business day turnaround and include text and image
+  updates only; no new pages or structural layout changes.
+</span>
