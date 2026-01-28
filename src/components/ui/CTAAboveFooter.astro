@@ -1,0 +1,20 @@
+---
+import Section from "./Section.astro"
+import Heading from "./Heading.astro"
+import Button from "./Button.astro"
+---
+
+<Section bg="teal" class="md:pb-1">
+  <div class="max-w-4xl mx-auto px-4 text-center relative z-10">
+    <Heading class="mb-6 text-white"> Ready to start your journey? </Heading>
+    <p class="text-xl text-white/90 mb-10">
+      Let's discuss your project and create a custom roadmap tailored to your
+      needs.
+    </p>
+    <a href="/contact">
+      <Button variant="secondary" size="lg" withArrow>
+        Get Started Today
+      </Button>
+    </a>
+  </div>
+</Section>

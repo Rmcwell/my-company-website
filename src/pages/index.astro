@@ -6,6 +6,7 @@ import Text from "../components/ui/Text.astro";
 import Button from "../components/ui/Button.astro";
 import SectionLabel from "../components/ui/SectionLabel.astro";
 import PricingPlans from "../components/PricingPlans.astro";
+import CTAAboveFooter from "../components/ui/CTAAboveFooter.astro";
 
 import {
   ArrowRight,
@@ -249,7 +250,7 @@ const processSteps = [
   <Section class="bg-white">
     <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
       {/* Left side - Large professional image */}
-      <div class="relative animate-fade-in-left ">
+      <div class="relative animate-fade-in-left">
         <div
           class="relative rounded-3xl overflow-hidden shadow-2xl
                     w-full h-48 lg:h-auto"
@@ -380,52 +381,38 @@ const processSteps = [
     <PricingPlans />
   </Section>
 
-  <!-- Call to Action -->
-  <Section bg="teal" class="md:pb-1">
-    <div class="max-w-4xl mx-auto px-4 text-center relative z-10">
-      <Heading class="mb-6 text-white"> Ready to start your journey? </Heading>
-      <p class="text-xl text-white/90 mb-10">
-        Let's discuss your project and create a custom roadmap tailored to your
-        needs.
-      </p>
-      <a href="/contact">
-        <Button variant="secondary" size="lg" withArrow>
-          Get Started Today
-        </Button>
-      </a>
-    </div>
-  </Section>
-
-  <style>
-    @keyframes fade-in-up {
-      from {
-        opacity: 0;
-        transform: translateY(20px);
-      }
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
-    }
-
-    .animate-fade-in-up {
-      animation: fade-in-up 0.6s ease-out forwards;
-    }
-
-    .trust-indicator {
-      animation: fade-in-up 0.5s ease-out forwards;
-    }
-
-    .trust-indicator:nth-child(1) {
-      animation-delay: 0.5s;
-    }
-
-    .trust-indicator:nth-child(2) {
-      animation-delay: 0.6s;
-    }
-
-    .trust-indicator:nth-child(3) {
-      animation-delay: 0.7s;
-    }
-  </style>
+  <CTAAboveFooter />
 </Layout>
+
+<style>
+  @keyframes fade-in-up {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .animate-fade-in-up {
+    animation: fade-in-up 0.6s ease-out forwards;
+  }
+
+  .trust-indicator {
+    animation: fade-in-up 0.5s ease-out forwards;
+  }
+
+  .trust-indicator:nth-child(1) {
+    animation-delay: 0.5s;
+  }
+
+  .trust-indicator:nth-child(2) {
+    animation-delay: 0.6s;
+  }
+
+  .trust-indicator:nth-child(3) {
+    animation-delay: 0.7s;
+  }
+</style>

@@ -4,9 +4,6 @@ import {
   Mail,
   Phone,
   MapPin,
-  Linkedin,
-  Github,
-  Twitter,
 } from "lucide-astro";
 
 const currentYear = new Date().getFullYear();
@@ -131,53 +128,47 @@ const serviceLinks = [
               <a href="mailto:info@docksideweb.com" class="hover:text-teal-400">
                 info@docksideweb.com
               </a>
-              </li>
-              <li class="flex items-start space-x-3 text-slate-300 text-sm">
-                <Phone class="h-5 w-5 text-teal-400 shrink-0" />
-                <a href="tel:+14438447850" class="hover:text-teal-400">
-                  +1 (443) 844-7850
-                </a>
-              </li>
-              <li class="flex items-start space-x-3 text-slate-300 text-sm">
-                <MapPin class="h-5 w-5 text-teal-400 shrink-0" />
-                <span>Baltimore, MD</span>
-              </li>
-              <li class="flex items-start space-x-3 text-slate-300 text-sm">
-                <MapPin class="h-5 w-5 text-teal-400 shrink-0" />
-                <span>Charleston, SC</span>
-              </li>
+            </li>
+            <li class="flex items-start space-x-3 text-slate-300 text-sm">
+              <Phone class="h-5 w-5 text-teal-400 shrink-0" />
+              <a href="tel:+14438447850" class="hover:text-teal-400">
+                +1 (443) 844-7850
+              </a>
+            </li>
+            <li class="flex items-start space-x-3 text-slate-300 text-sm">
+              <MapPin class="h-5 w-5 text-teal-400 shrink-0" />
+              <span>Baltimore, MD</span>
+            </li>
+            <li class="flex items-start space-x-3 text-slate-300 text-sm">
+              <MapPin class="h-5 w-5 text-teal-400 shrink-0" />
+              <span>Charleston, SC</span>
+            </li>
           </ul>
-          </div>
         </div>
+      </div>
 
-        <div
-          class="border-t border-white/10 pt-8 flex flex-col md:flex-row justify-between items-center"
-        >
-          <p class="text-slate-500 text-sm">
-            © {currentYear} Dockside Web Solutions. All rights reserved.
-          </p>
-          <div class="flex space-x-6 mt-4 md:mt-0">
-            <a
-              href="#"
-              class="text-slate-400 hover:text-yellow-500 transition-colors"
-              aria-label="LinkedIn"
-            >
-              <Linkedin class="h-5 w-5" />
-            </a>
-            <a
-              href="#"
-              class="text-slate-400 hover:text-yellow-500 transition-colors"
-              aria-label="GitHub"
-            >
-              <Github class="h-5 w-5" />
-            </a>
-            <a
-              href="#"
-              class="text-slate-400 hover:text-yellow-500 transition-colors"
-              aria-label="Twitter"
-            >
-              <Twitter class="h-5 w-5" />
-            </a>
+      <div
+        class="border-t border-white/10 pt-8 flex flex-col md:flex-row justify-between items-center"
+      >
+        <p class="text-slate-500 text-sm">
+          © {currentYear} Dockside Web Solutions. All rights reserved.
+        </p>
+        <div class="flex space-x-3 mt-4 md:mt-0">
+          <a
+            href="/legal/privacy-policy"
+            class="text-slate-400 hover:text-yellow-500 transition-colors"
+            aria-label="Privacy Policy"
+          >
+            <p>Privacy Policy</p>
+          </a>
+          <p class="text-slate-400">|</p>
+          <a
+            href="/legal/terms-of-service"
+            class="text-slate-400 hover:text-yellow-500 transition-colors"
+            aria-label="Terms of Service"
+          >
+            <p>Terms of Service</p>
+          </a>
         </div>
       </div>
     </div>
