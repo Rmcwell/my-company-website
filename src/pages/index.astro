@@ -11,6 +11,7 @@ import Portfolio from "../components/Portfolio.astro";
 import CTAAboveFooter from "../components/CTAAboveFooter.astro";
 import { Image } from "astro:assets";
 import heroImage from "../assets/heroImage.webp";
+import dockImage from "../assets/dock.jpg";
 
 import { Smartphone, CheckCircle, Eye, Rabbit, Coffee } from "lucide-astro";
 
@@ -20,6 +21,7 @@ const services = [
     title: "Lightning-Fast Performance",
     subtitle: "Speed keeps people on your site",
     desc: "A fast website feels more professional and keeps customers from leaving. We optimize performance so pages load fast and respond instantly.",
+    href: "/web-design/",
     bullets: [
       "Faster load times (so people don't leave)",
       "Smooth scrolling and quick page changes",
@@ -31,8 +33,9 @@ const services = [
     title: "Hands-Off Hosting & Updates",
     subtitle: "You run your business, we run the site",
     desc: "We handle hosting, security, and minor changes so your website stays online, current, and worry-free.",
+    href: "/hosting-and-support/",
     bullets: [
-      "Unlimited minor content updates",
+      "Unlimited minor content updates (text, photos, hours, pricing)",
       "Security patches and routine maintenance handled for you",
       "Managed domains and hosting, with renewals covered"
     ]
@@ -42,6 +45,7 @@ const services = [
     title: "Mobile Friendly Design",
     subtitle: "Most customers will visit from their phone",
     desc: "Your site looks sharp and works perfectly on any screen; phone, tablet, or desktop.",
+    href: "/web-design/",
     bullets: [
       "Pages that feel smooth and quick, even on the go",
       "Text that's easy to read on small screens",
@@ -50,13 +54,14 @@ const services = [
   },
   {
     icon: Eye,
-    title: "Google Visibility Setup",
-    subtitle: "Built to help customers find you",
-    desc: "We set up your pages so Google understands what you do and where you serve, giving you a strong foundation to show up in search.",
+    title: "SEO That Brings Customers In",
+    subtitle: "Search Engine Optimization built to be found in local search",
+    desc: "We structure your pages so Google knows exactly what you do and who you serve. Giving you a solid foundation to rank for the searches that matter.",
+    href: "/seo/",
     bullets: [
-      "Unlimited Minor content updates (text, photos, hours, pricing)",
-      "Location & service targeting so Google understands what you offer and where you offer it",
-      "Clean structure that's easy for Google and people to navigate"
+      "Location & service targeting so you show up for the right searches",
+      "Page structure optimized for both Google and real visitors",
+      "A clean technical foundation built for long-term visibility"
     ]
   }
 ];
@@ -93,9 +98,9 @@ const metaDescription =
 ---
 
 <Layout description={metaDescription}>
-  <!-- ── HERO — untouched, already has its own animate-fade-in-up ── -->
+  <!-- ── HERO ── -->
   <section
-    class="hero-section relative min-h-[75vh] flex items-center overflow-hidden pb-24 bg-navy"
+    class="hero-section relative min-h-screen flex items-center overflow-hidden pb-24 bg-navy"
   >
     <div class="absolute inset-0 z-0">
       <Image
@@ -110,7 +115,7 @@ const metaDescription =
     </div>
 
     <div
-      class="absolute inset-0 bg-linear-to-r from-navy via-navy/90 to-navy/25 z-1"
+      class="absolute inset-0 bg-linear-to-b md:bg-linear-to-r from-navy via-navy/50 md:via-navy/90 to-navy/25 z-1"
     >
     </div>
     <div class="absolute inset-0 bg-black/20 z-1"></div>
@@ -118,7 +123,7 @@ const metaDescription =
     <div
       class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 pt-20 w-full"
     >
-      <div class="max-w-175 animate-fade-in-up">
+      <div class="max-w-2xl sm:max-w-175 animate-fade-in-up">
         <h1
           class="font-heading font-bold text-white leading-[1.05] mb-4 tracking-tight text-4xl sm:text-5xl md:text-6xl lg:text-[4rem] text-center sm:text-left"
         >
@@ -140,23 +145,21 @@ const metaDescription =
           class="flex flex-row gap-3 mb-8 items-center justify-center sm:justify-start"
         >
           <a href="/contact/">
-            <Button variant="primary" size="lg" class="w-full sm:w-auto">
-              Get Started
-            </Button>
+            <Button variant="primary" size="lg"> Get Started </Button>
           </a>
-          <a href="/about/">
+          <a href="/web-design/">
             <Button
               variant="outline"
               size="lg"
-              class="w-full sm:w-auto text-white border-white/60"
+              class="text-white border-white/60"
             >
-              About Us
+              Services
             </Button>
           </a>
         </div>
 
         <div
-          class="flex flex-col items-center sm:items-start sm:flex-row flex-wrap gap-2 sm:gap-8 text-white/75"
+          class="flex flex-row flex-wrap gap-x-6 gap-y-2 justify-center sm:justify-start text-white/75"
         >
           <div
             class="flex items-center gap-2 animate-fade-in-up [animation-delay:0.5s] opacity-0 [animation-fill-mode:forwards]"
@@ -209,8 +212,9 @@ const metaDescription =
     <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
       {
         services.map((service, i) => (
-          <div
-            class="p-8 rounded-2xl group border-slate-200 border-2 bg-white hover:bg-navy hover:border-navy transition-all duration-300 reveal-up opacity-0"
+          <a
+            href={service.href}
+            class="p-8 rounded-2xl group border-slate-200 border-2 bg-white hover:bg-navy hover:border-navy transition-all duration-300 reveal-up opacity-0 flex flex-col"
             style={`transition-delay: ${i * 100}ms`}
           >
             <div class="flex items-start space-x-4 mb-6">
@@ -229,7 +233,7 @@ const metaDescription =
             <p class="text-slate-700 group-hover:text-slate-300 leading-relaxed mb-6 transition-colors duration-300">
               {service.desc}
             </p>
-            <div class="space-y-3">
+            <div class="space-y-3 mb-8">
               {service.bullets.map((bullet) => (
                 <div class="flex items-center space-x-3 text-sm text-slate-600 group-hover:text-slate-400 transition-colors duration-300">
                   <div class="w-1.5 h-1.5 bg-teal group-hover:bg-gold rounded-full transition-colors duration-300" />
@@ -237,7 +241,26 @@ const metaDescription =
                 </div>
               ))}
             </div>
-          </div>
+            <div class="mt-auto transition-colors duration-300">
+              <span class="inline-flex items-center gap-2 text-sm font-semibold text-teal-600 group-hover:text-gold transition-colors duration-300">
+                Learn More
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  class="h-4 w-4 translate-x-0 group-hover:translate-x-1 transition-transform duration-300"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                  stroke-width="2.5"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="M17 8l4 4m0 0l-4 4m4-4H3"
+                  />
+                </svg>
+              </span>
+            </div>
+          </a>
         ))
       }
     </div>
@@ -252,7 +275,7 @@ const metaDescription =
           class="relative rounded-3xl overflow-hidden shadow-2xl w-full h-48 lg:h-auto"
         >
           <Image
-            src={heroImage}
+            src={dockImage}
             alt="Professional website example"
             class="w-full h-full object-cover lg:aspect-3/4"
           />
