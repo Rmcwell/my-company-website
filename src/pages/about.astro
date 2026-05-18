@@ -1,6 +1,6 @@
 ---
 import { Image } from "astro:assets";
-import CTABackgroundImage from "../assets/CTABackgroundImage.webp";
+import aboutImage from "../assets/about.webp";
 import Layout from "../layouts/Layout.astro";
 import HeroSecondary from "../components/HeroSecondary.astro";
 import Section from "../components/ui/Section.astro";
@@ -26,14 +26,14 @@ const metaDescription =
   <Section>
     <div class="mx-auto max-w-6xl">
       <div class="grid gap-12 lg:grid-cols-[0.85fr_1.15fr] items-center">
-        <div class="relative">
+        <div class="relative order-last lg:order-first">
           <div
             class="overflow-hidden rounded-2xl shadow-2xl border-4 border-white"
           >
             <Image
-              src={CTABackgroundImage}
+              src={aboutImage}
               alt="Photo of Riley Caldwell, the founder and developer of Dockside Web Solutions"
-              class="w-full object-cover aspect-4/5 bg-navy/10"
+              class="w-full object-cover aspect-4/5 bg-navy/10 object-right"
             />
           </div>
 
@@ -55,7 +55,7 @@ const metaDescription =
           </div>
         </div>
 
-        <div class="flex flex-col">
+        <div class="flex flex-col order-first lg:order-last">
           <SectionLabel>About Us</SectionLabel>
           <Heading>
             The Developer Behind<br />

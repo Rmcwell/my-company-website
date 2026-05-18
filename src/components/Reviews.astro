@@ -127,6 +127,10 @@ const testimonialsVisible = count ? testimonials.slice(0, count) : testimonials;
     const GAP = 24; 
     let current = 0;
 
+    let startX = 0;
+    let currentX = 0;
+    let isDragging = false;
+
     function getVisibleCount() {
       if (window.innerWidth >= 768) return 2;
       return 1;
@@ -187,6 +191,35 @@ const testimonialsVisible = count ? testimonials.slice(0, count) : testimonials;
     if(nextBtn) nextBtn.onclick = () => goTo(current + 1);
     if(prevBtnMobile) prevBtnMobile.onclick = () => goTo(current - 1);
     if(nextBtnMobile) nextBtnMobile.onclick = () => goTo(current + 1);
+
+    function handleTouchStart(e: TouchEvent) {
+      startX = e.touches[0].clientX;
+      isDragging = true;
+    }
+
+    function handleTouchMove(e: TouchEvent) {
+      if (!isDragging) return;
+      currentX = e.touches[0].clientX;
+    }
+
+    function handleTouchEnd() {
+      if (!isDragging) return;
+
+      const diff = startX - currentX;
+      const threshold = 50; // minimum swipe distance
+
+      if (diff > threshold) {
+        goTo(current + 1); // swipe left
+      } else if (diff < -threshold) {
+        goTo(current - 1); // swipe right
+      }
+
+      isDragging = false;
+    }
+
+    viewport.addEventListener('touchstart', handleTouchStart, { passive: true });
+    viewport.addEventListener('touchmove', handleTouchMove, { passive: true });
+    viewport.addEventListener('touchend', handleTouchEnd);
 
     updateLayout();
     window.addEventListener('load', updateLayout);
