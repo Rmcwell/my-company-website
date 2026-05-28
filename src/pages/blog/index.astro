@@ -4,7 +4,7 @@ import Layout from "../../layouts/Layout.astro";
 import HeroSecondary from "../../components/HeroSecondary.astro";
 import CTAAboveFooter from "../../components/CTAAboveFooter.astro";
 import readingTime from "reading-time";
-import headshot from "../../assets/logo/icon-only.png";
+import headshot from "../../assets/headshot.webp";
 
 const allPosts = (await getCollection("blog")).sort(
   (a: CollectionEntry<"blog">, b: CollectionEntry<"blog">) =>
@@ -25,7 +25,6 @@ const remainingPosts = allPosts.slice(1);
   <div
     class="max-w-6xl mx-auto px-6 py-16 grid grid-cols-1 lg:grid-cols-[1fr_320px] gap-12"
   >
-    <!-- Main content -->
     <div>
       <!-- Hero/latest post card -->
       {
@@ -41,7 +40,7 @@ const remainingPosts = allPosts.slice(1);
               </div>
             )}
             <div class="p-6">
-              <div class="flex items-center gap-2 mb-3">
+              <div class="flex items-center md:gap-3 gap-1 mb-3">
                 <img
                   src={headshot.src}
                   alt={mainPost.data.author}
@@ -100,7 +99,7 @@ const remainingPosts = allPosts.slice(1);
               )}
               <div class="p-6 flex flex-col justify-between">
                 <div>
-                  <div class="flex items-center gap-2 mb-2 flex-wrap">
+                  <div class="flex items-center md:gap-3 gap-1 mb-2 flex-wrap">
                     <img
                       src={headshot.src}
                       alt={post.data.author}
