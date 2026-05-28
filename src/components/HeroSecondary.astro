@@ -4,16 +4,15 @@ import SectionLabel from "./ui/SectionLabel.astro";
 import Heading from "./ui/Heading.astro";
 import Text from "./ui/Text.astro";
 
-const {
-  label = "label",
-  heading = "heading",
-  description = "description",
-} = Astro.props;
+const { label = "", heading = "", description = "" } = Astro.props;
 ---
 
 <Section bg="navy" class="text-center">
   <div class="pt-18">
-    <div class="absolute inset-0 opacity-12 bg-[url('https://www.transparenttextures.com/patterns/white-wave.png')]"></div>
+    <div
+      class="absolute inset-0 opacity-12 bg-[url('https://www.transparenttextures.com/patterns/white-wave.png')]"
+    >
+    </div>
     <SectionLabel>{label}</SectionLabel>
     <Heading as="h1" class="text-white mb-6">
       {heading}
