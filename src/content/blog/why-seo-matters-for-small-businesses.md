@@ -3,7 +3,7 @@ title: "Why SEO Matters for Small Businesses More Than Ever"
 pubDate: 05-23-2026
 description: "A beautiful website means nothing if nobody can find it. Here is why SEO is one of the most valuable long-term investments for small businesses."
 author: "Riley Caldwell"
-featured: true
+featured: false
 coverImage: "https://images.unsplash.com/photo-1560472354-b33ff0c44a43?q=80&w=1851&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
 tags: ["seo", "marketing", "small-business"]
 ---
