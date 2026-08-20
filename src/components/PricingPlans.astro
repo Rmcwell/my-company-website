@@ -15,19 +15,35 @@ type Plan = {
 const pricingPlans: Plan[] = [
   {
     name: "The Beacon",
-    price: "$59",
+    price: "$68",
     payment: "Per Month",
-    description: "A simple, professionally managed one-page site built to get your business online fast.",
-    features: ["Custom single page website", "Unlimited minor content edits*", "Hosting, domain, & SSL", "Search Engine Optimization (SEO)", "Delivery in 1 week", "Contact form"],
+    description:
+      "A simple, professionally managed one-page site built to get your business online fast.",
+    features: [
+      "Custom single page website",
+      "Unlimited minor content edits*",
+      "Hosting, domain, & SSL",
+      "Search Engine Optimization (SEO)",
+      "Delivery in 1 week",
+      "Contact form"
+    ],
     optionalFeatures: ["$20/month blog management"],
     highlighted: false
   },
   {
     name: "The Navigator",
-    price: "$115",
+    price: "$155",
     payment: "Per Month",
-    description: "A fully managed, high-performance business website designed to grow alongside your company.",
-    features: ["Custom website (up to 6 pages)", "Unlimited minor content edits*", "Hosting, domain, & SSL", "Search Engine Optimization (SEO)", "Delivery in 2-3 weeks", "Contact form"],
+    description:
+      "A fully managed, high-performance business website designed to grow alongside your company.",
+    features: [
+      "Custom website (up to 6 pages)",
+      "Unlimited minor content edits*",
+      "Hosting, domain, & SSL",
+      "Search Engine Optimization (SEO)",
+      "Delivery in 2-3 weeks",
+      "Contact form"
+    ],
     optionalFeatures: ["$100 one-time fee for each extra page", "$20/month blog management"],
     highlighted: true
   },
@@ -36,8 +52,17 @@ const pricingPlans: Plan[] = [
     price: "$2,750",
     payment: "One Time Cost",
     description: "A custom-built website for established businesses that prefer full ownership.",
-    features: ["Custom website (up to 6 pages)", "Delivery in 2-3 weeks", "Search Engine Optimization (SEO)", "Full ownership of all assets"],
-    optionalFeatures: ["$100 one-time fee for each extra page", "$45/month care plan (hosting, domain, SSL & unlimited edits)", "$200 one-time fee for blog setup"],
+    features: [
+      "Custom website (up to 6 pages)",
+      "Delivery in 2-3 weeks",
+      "Search Engine Optimization (SEO)",
+      "Full ownership of all assets"
+    ],
+    optionalFeatures: [
+      "$100 one-time fee for each extra page",
+      "$45/month care plan (hosting, domain, SSL & unlimited edits)",
+      "$200 one-time fee for blog setup"
+    ],
     highlighted: false
   }
 ];
@@ -49,19 +74,38 @@ const pricingPlans: Plan[] = [
       <div class={plan.highlighted ? "lg:-my-6 relative z-10" : ""}>
         <div
           class={`rounded-2xl flex flex-col h-full transition-shadow duration-300 p-8 ${
-            plan.highlighted ? "bg-navy text-white shadow-2xl" : "bg-white border border-navy/10 text-navy hover:shadow-md"
+            plan.highlighted
+              ? "bg-navy text-white shadow-2xl"
+              : "bg-white border border-navy/10 text-navy hover:shadow-md"
           }`}>
           {/* Badge */}
-          {plan.highlighted && <span class="inline-block self-start mb-4 bg-gold text-navy text-xs font-semibold uppercase tracking-widest px-3 py-1 rounded-full">Most Popular</span>}
+          {plan.highlighted && (
+            <span class="inline-block self-start mb-4 bg-gold text-navy text-xs font-semibold uppercase tracking-widest px-3 py-1 rounded-full">
+              Most Popular
+            </span>
+          )}
 
           {/* Name & description */}
-          <h3 class={`text-2xl font-semibold mb-1 ${plan.highlighted ? "text-white" : "text-navy"}`}>{plan.name}</h3>
-          <p class={`text-sm mb-6 leading-relaxed ${plan.highlighted ? "text-white/60" : "text-gray-500"}`}>{plan.description}</p>
+          <h3
+            class={`text-2xl font-semibold mb-1 ${plan.highlighted ? "text-white" : "text-navy"}`}>
+            {plan.name}
+          </h3>
+          <p
+            class={`text-sm mb-6 leading-relaxed ${plan.highlighted ? "text-white/60" : "text-gray-500"}`}>
+            {plan.description}
+          </p>
 
           {/* Price */}
           <div class="mb-6">
-            <span class={`text-5xl tracking-tight ${plan.highlighted ? "text-white" : "text-navy"}`}>{plan.price}</span>
-            {plan.price !== "Custom" && <span class={`text-sm ml-2 ${plan.highlighted ? "text-white/60" : "text-gray-500"}`}>{plan.payment}</span>}
+            <span
+              class={`text-5xl tracking-tight ${plan.highlighted ? "text-white" : "text-navy"}`}>
+              {plan.price}
+            </span>
+            {plan.price !== "Custom" && (
+              <span class={`text-sm ml-2 ${plan.highlighted ? "text-white/60" : "text-gray-500"}`}>
+                {plan.payment}
+              </span>
+            )}
           </div>
 
           {/* CTA */}
@@ -73,24 +117,38 @@ const pricingPlans: Plan[] = [
 
           {/* Features */}
           <div class="flex-1">
-            <p class={`text-xs font-semibold uppercase tracking-widest mb-4 ${plan.highlighted ? "text-white/40" : "text-gray-400"}`}>What's Included</p>
+            <p
+              class={`text-xs font-semibold uppercase tracking-widest mb-4 ${plan.highlighted ? "text-white/40" : "text-gray-400"}`}>
+              What's Included
+            </p>
             <div class="space-y-3">
               {plan.features.map(feature => (
                 <div class="flex items-start gap-3">
                   <Check class="h-4 w-4 mt-0.5 shrink-0 text-teal" />
-                  <span class={`text-sm leading-snug ${plan.highlighted ? "text-white/60" : "text-gray-500"}`}>{feature}</span>
+                  <span
+                    class={`text-sm leading-snug ${plan.highlighted ? "text-white/60" : "text-gray-500"}`}>
+                    {feature}
+                  </span>
                 </div>
               ))}
             </div>
             {plan.optionalFeatures.length > 0 && (
               <>
-                <div class={`border-t my-5 ${plan.highlighted ? "border-white/10" : "border-navy/10"}`} />
-                <p class={`text-xs font-semibold uppercase tracking-widest mb-4 ${plan.highlighted ? "text-white/40" : "text-gray-400"}`}>Add-Ons (Optional)</p>
+                <div
+                  class={`border-t my-5 ${plan.highlighted ? "border-white/10" : "border-navy/10"}`}
+                />
+                <p
+                  class={`text-xs font-semibold uppercase tracking-widest mb-4 ${plan.highlighted ? "text-white/40" : "text-gray-400"}`}>
+                  Add-Ons (Optional)
+                </p>
                 <div class="space-y-3">
                   {plan.optionalFeatures.map(feature => (
                     <div class="flex items-start gap-3">
                       <Plus class="h-4 w-4 mt-0.5 shrink-0 text-gold" />
-                      <span class={`text-sm leading-snug ${plan.highlighted ? "text-white/60" : "text-gray-500"}`}>{feature}</span>
+                      <span
+                        class={`text-sm leading-snug ${plan.highlighted ? "text-white/60" : "text-gray-500"}`}>
+                        {feature}
+                      </span>
                     </div>
                   ))}
                 </div>
@@ -104,5 +162,6 @@ const pricingPlans: Plan[] = [
 </div>
 
 <p class="text-gray-400 text-s text-center px-8 mt-10 lg:mt-12 mx-auto">
-  * Minor content edits have a 1-2 business day turnaround and include text and image updates only; no new pages or structural layout changes.
+  * Minor content edits have a 1-2 business day turnaround and include text and image updates only;
+  no new pages or structural layout changes.
 </p>
