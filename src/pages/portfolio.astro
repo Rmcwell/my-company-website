@@ -8,16 +8,11 @@ import CTAAboveFooter from "../components/CTAAboveFooter.astro";
 import PortfolioComponent from "../components/Portfolio.astro";
 
 const pageTitle = "Portfolio";
-const metaDescription =
-  "Browse our portfolio of custom websites for small businesses. See modern designs built for leads, speed, and growth.";
+const metaDescription = "Browse our portfolio of custom websites for small businesses. See modern designs built for leads, speed, and growth.";
 ---
 
 <Layout title={pageTitle} description={metaDescription}>
-  <HeroSecondary
-    label="Businesses We've Worked With"
-    heading="Portfolio"
-    description="Check out some of our latest projects and see how we can help your business grow."
-  />
+  <HeroSecondary label="Businesses We've Worked With" heading="Portfolio" description="Check out some of our latest projects and see how we can help your business grow." />
 
   <Section bg="light">
     <PortfolioComponent show="featured" />

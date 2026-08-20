@@ -6,16 +6,11 @@ import CTAAboveFooter from "../components/CTAAboveFooter.astro";
 import ReviewsComponent from "../components/Reviews.astro";
 
 const pageTitle = "Reviews";
-const metaDescription =
-  "See what small business owners say about working with us. Read real client reviews on our website design, SEO, and support services.";
+const metaDescription = "See what small business owners say about working with us. Read real client reviews on our website design, SEO, and support services.";
 ---
 
 <Layout title={pageTitle} description={metaDescription}>
-  <HeroSecondary
-    label="What Our Clients Say"
-    heading="Reviews"
-    description="See how we’ve helped small businesses grow with modern websites, better visibility, and dependable support."
-  />
+  <HeroSecondary label="What Our Clients Say" heading="Reviews" description="See how we’ve helped small businesses grow with modern websites, better visibility, and dependable support." />
 
   <Section>
     <ReviewsComponent layout="grid" />

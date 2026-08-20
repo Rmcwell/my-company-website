@@ -4,18 +4,18 @@ export default {
     let changed = false;
 
     // 1. Normalize WWW to Apex (e.g., www.docksideweb.com -> docksideweb.com)
-    if (url.hostname.startsWith('www.')) {
-      url.hostname = url.hostname.replace(/^www\./, '');
+    if (url.hostname.startsWith("www.")) {
+      url.hostname = url.hostname.replace(/^www\./, "");
       changed = true;
     }
 
     const pathname = url.pathname;
-    const isFile = pathname.includes('.');
+    const isFile = pathname.includes(".");
 
     // 2. Trailing Slash Logic (e.g., /contact -> /contact/)
     // We skip this for files and the root index
-    if (!isFile && !pathname.endsWith('/') && pathname !== '/') {
-      url.pathname = pathname + '/';
+    if (!isFile && !pathname.endsWith("/") && pathname !== "/") {
+      url.pathname = pathname + "/";
       changed = true;
     }
 
@@ -26,5 +26,5 @@ export default {
 
     // 3. Serve Assets if no redirect was needed
     return env.ASSETS.fetch(request);
-  },
+  }
 };

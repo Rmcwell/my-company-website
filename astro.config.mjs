@@ -4,13 +4,13 @@ import sitemap from "@astrojs/sitemap";
 
 export default defineConfig({
   site: "https://docksideweb.com",
-  trailingSlash: 'always',
+  trailingSlash: "always",
   output: "static",
   build: {
-    format: 'directory' 
+    format: "directory"
   },
   vite: {
-    plugins: [tailwindcss()],
+    plugins: [tailwindcss()]
   },
-  integrations: [sitemap()],
+  integrations: [sitemap()]
 });

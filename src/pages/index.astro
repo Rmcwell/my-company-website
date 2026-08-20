@@ -13,16 +13,7 @@ import { Image } from "astro:assets";
 import heroImage from "../assets/heroImage.webp";
 import dockImage from "../assets/dock.jpg";
 
-import {
-  Smartphone,
-  CheckCircle,
-  Eye,
-  Rabbit,
-  Coffee,
-  Zap,
-  Gauge,
-  ShieldCheck
-} from "lucide-astro";
+import { Smartphone, CheckCircle, Eye, Rabbit, Coffee, Zap, Gauge, ShieldCheck } from "lucide-astro";
 
 const services = [
   {
@@ -31,11 +22,7 @@ const services = [
     subtitle: "Speed keeps people on your site",
     desc: "A fast website feels more professional and keeps customers from leaving. We optimize performance so pages load fast and respond instantly.",
     href: "/web-design/",
-    bullets: [
-      "Faster load times (so people don't leave)",
-      "Smooth scrolling and quick page changes",
-      "Optimized images so your site stays sharp and speedy"
-    ]
+    bullets: ["Faster load times (so people don't leave)", "Smooth scrolling and quick page changes", "Optimized images so your site stays sharp and speedy"]
   },
   {
     icon: Coffee,
@@ -43,11 +30,7 @@ const services = [
     subtitle: "You run your business, we run the site",
     desc: "We handle hosting, security, and minor changes so your website stays online, current, and worry-free.",
     href: "/hosting-and-support/",
-    bullets: [
-      "Unlimited minor content updates (text, photos, hours, pricing)",
-      "Security patches and routine maintenance handled for you",
-      "Managed domains and hosting, with renewals covered"
-    ]
+    bullets: ["Unlimited minor content updates (text, photos, hours, pricing)", "Security patches and routine maintenance handled for you", "Managed domains and hosting, with renewals covered"]
   },
   {
     icon: Smartphone,
@@ -55,11 +38,7 @@ const services = [
     subtitle: "Most customers will visit from their phone",
     desc: "Your site looks sharp and works perfectly on any screen; phone, tablet, or desktop.",
     href: "/web-design/",
-    bullets: [
-      "Pages that feel smooth and quick, even on the go",
-      "Text that's easy to read on small screens",
-      "Fast loading on cellular networks"
-    ]
+    bullets: ["Pages that feel smooth and quick, even on the go", "Text that's easy to read on small screens", "Fast loading on cellular networks"]
   },
   {
     icon: Eye,
@@ -123,15 +102,12 @@ const performanceMinis = [
   { label: "Secure & safe", sub: "Protected from day one", icon: ShieldCheck }
 ];
 
-const metaDescription =
-  "Modern, high-performance web development for small businesses in Charleston and beyond. We build custom sites designed to scale your brand.";
+const metaDescription = "Modern, high-performance web development for small businesses in Charleston and beyond. We build custom sites designed to scale your brand.";
 ---
 
 <Layout description={metaDescription}>
   <!-- ── HERO ── -->
-  <section
-    class="hero-section relative min-h-screen flex items-center overflow-hidden pb-24 bg-navy"
-  >
+  <section class="hero-section relative min-h-screen flex items-center overflow-hidden pb-24 bg-navy">
     <div class="absolute inset-0 z-0">
       <Image
         src={heroImage}
@@ -144,68 +120,38 @@ const metaDescription =
       />
     </div>
 
-    <div
-      class="absolute inset-0 bg-linear-to-b md:bg-linear-to-r from-navy via-navy/50 md:via-navy/90 to-navy/25 z-1"
-    >
-    </div>
+    <div class="absolute inset-0 bg-linear-to-b md:bg-linear-to-r from-navy via-navy/50 md:via-navy/90 to-navy/25 z-1"></div>
     <div class="absolute inset-0 bg-black/20 z-1"></div>
 
-    <div
-      class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 pt-20 w-full"
-    >
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 pt-20 w-full">
       <div class="max-w-2xl sm:max-w-175 animate-fade-in-up">
-        <h1
-          class="font-heading font-bold text-white leading-[1.05] mb-4 tracking-tight text-4xl sm:text-5xl md:text-6xl lg:text-[4rem] text-center sm:text-left"
-        >
-          <span class="text-gold">Custom Websites</span> Built for <span
-            class="text-gold">Small Businesses</span
-          >
+        <h1 class="font-heading font-bold text-white leading-[1.05] mb-4 tracking-tight text-4xl sm:text-5xl md:text-6xl lg:text-[4rem] text-center sm:text-left">
+          <span class="text-gold">Custom Websites</span> Built for <span class="text-gold">Small Businesses</span>
         </h1>
 
-        <p
-          class="text-base sm:text-lg text-white mb-8 max-w-xl text-center sm:text-left mx-auto sm:mx-0"
-        >
-          We build high-performing websites <strong
-            >starting at $0 down and $79/mo
-          </strong>that look professional, load quickly, rank better on Google,
-          and help turn clicks into paying customers.
+        <p class="text-base sm:text-lg text-white mb-8 max-w-xl text-center sm:text-left mx-auto sm:mx-0">
+          We build high-performing websites <strong>starting at $0 down and $79/mo </strong>that look professional, load quickly, rank better on Google, and help turn clicks into paying customers.
         </p>
 
-        <div
-          class="flex flex-row gap-3 mb-8 items-center justify-center sm:justify-start"
-        >
+        <div class="flex flex-row gap-3 mb-8 items-center justify-center sm:justify-start">
           <a href="/contact/">
             <Button variant="primary" size="lg"> Get Started </Button>
           </a>
           <a href="/web-design/">
-            <Button
-              variant="outline"
-              size="lg"
-              class="text-white border-white/60"
-            >
-              Services
-            </Button>
+            <Button variant="outline" size="lg" class="text-white border-white/60"> Services </Button>
           </a>
         </div>
 
-        <div
-          class="flex flex-row flex-wrap gap-x-6 gap-y-2 justify-center sm:justify-start text-white/75"
-        >
-          <div
-            class="flex items-center gap-2 animate-fade-in-up [animation-delay:0.5s] opacity-0 [animation-fill-mode:forwards]"
-          >
+        <div class="flex flex-row flex-wrap gap-x-6 gap-y-2 justify-center sm:justify-start text-white/75">
+          <div class="flex items-center gap-2 animate-fade-in-up [animation-delay:0.5s] opacity-0 [animation-fill-mode:forwards]">
             <CheckCircle class="w-4 h-4 text-gold shrink-0" />
             <span class="text-sm">Live in 2-3 weeks</span>
           </div>
-          <div
-            class="flex items-center gap-2 animate-fade-in-up [animation-delay:0.6s] opacity-0 [animation-fill-mode:forwards]"
-          >
+          <div class="flex items-center gap-2 animate-fade-in-up [animation-delay:0.6s] opacity-0 [animation-fill-mode:forwards]">
             <CheckCircle class="w-4 h-4 text-gold shrink-0" />
             <span class="text-sm">Unlimited Updates</span>
           </div>
-          <div
-            class="flex items-center gap-2 animate-fade-in-up [animation-delay:0.7s] opacity-0 [animation-fill-mode:forwards]"
-          >
+          <div class="flex items-center gap-2 animate-fade-in-up [animation-delay:0.7s] opacity-0 [animation-fill-mode:forwards]">
             <CheckCircle class="w-4 h-4 text-gold shrink-0" />
             <span class="text-sm">Mobile Responsive</span>
           </div>
@@ -214,11 +160,7 @@ const metaDescription =
     </div>
 
     <div class="absolute bottom-0 left-0 w-full overflow-hidden leading-0 z-10">
-      <svg
-        class="relative block w-full h-24"
-        viewBox="0 0 1440 320"
-        preserveAspectRatio="none"
-      >
+      <svg class="relative block w-full h-24" viewBox="0 0 1440 320" preserveAspectRatio="none">
         <path
           fill="#F8FAFC"
           d="M0,160L48,176C96,192,192,224,288,213.3C384,203,480,149,576,149.3C672,149,768,203,864,218.7C960,235,1056,213,1152,186.7C1248,160,1344,128,1392,112L1440,96L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"
@@ -232,11 +174,7 @@ const metaDescription =
     <div class="text-center max-w-3xl mx-auto mb-16 reveal-up opacity-0">
       <SectionLabel>What We Do</SectionLabel>
       <Heading>Never Worry About Your Website Ever Again</Heading>
-      <Text class="mt-4">
-        From your first website to ongoing support, we handle everything you
-        need to look professional online and make it easy for customers to
-        contact you.
-      </Text>
+      <Text class="mt-4"> From your first website to ongoing support, we handle everything you need to look professional online and make it easy for customers to contact you. </Text>
     </div>
 
     <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
@@ -245,26 +183,19 @@ const metaDescription =
           <a
             href={service.href}
             class="p-8 rounded-2xl group border-slate-200 border-2 bg-white hover:bg-navy hover:border-navy transition-all duration-300 reveal-up opacity-0 flex flex-col"
-            style={`transition-delay: ${i * 100}ms`}
-          >
+            style={`transition-delay: ${i * 100}ms`}>
             <div class="flex items-start space-x-4 mb-6">
               <div class="w-14 h-14 bg-teal-100 rounded-xl flex items-center justify-center shrink-0 group-hover:bg-navy scale-110 transition-all duration-300">
                 <service.icon class="h-7 w-7 text-teal-600 group-hover:text-gold" />
               </div>
               <div>
-                <h3 class="text-2xl font-bold group-hover:text-white mb-2 transition-colors duration-300">
-                  {service.title}
-                </h3>
-                <p class="text-slate-600 group-hover:text-slate-400 text-sm transition-colors duration-300">
-                  {service.subtitle}
-                </p>
+                <h3 class="text-2xl font-bold group-hover:text-white mb-2 transition-colors duration-300">{service.title}</h3>
+                <p class="text-slate-600 group-hover:text-slate-400 text-sm transition-colors duration-300">{service.subtitle}</p>
               </div>
             </div>
-            <p class="text-slate-700 group-hover:text-slate-300 leading-relaxed mb-6 transition-colors duration-300">
-              {service.desc}
-            </p>
+            <p class="text-slate-700 group-hover:text-slate-300 leading-relaxed mb-6 transition-colors duration-300">{service.desc}</p>
             <div class="space-y-3 mb-8">
-              {service.bullets.map((bullet) => (
+              {service.bullets.map(bullet => (
                 <div class="flex items-center space-x-3 text-sm text-slate-600 group-hover:text-slate-400 transition-colors duration-300">
                   <div class="w-1.5 h-1.5 bg-teal group-hover:bg-gold rounded-full transition-colors duration-300" />
                   <span>{bullet}</span>
@@ -280,13 +211,8 @@ const metaDescription =
                   fill="none"
                   viewBox="0 0 24 24"
                   stroke="currentColor"
-                  stroke-width="2.5"
-                >
-                  <path
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    d="M17 8l4 4m0 0l-4 4m4-4H3"
-                  />
+                  stroke-width="2.5">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" />
                 </svg>
               </span>
             </div>
@@ -301,25 +227,18 @@ const metaDescription =
       <div class="relative grid gap-12 lg:grid-cols-2 lg:gap-16">
         <!-- Left column — slides in from left -->
         <div class="reveal-left opacity-0">
-          <h2
-            class="mt-4 text-3xl leading-[1.1] tracking-tight md:text-5xl text-white text-balance"
-          >
+          <h2 class="mt-4 text-3xl leading-[1.1] tracking-tight md:text-5xl text-white text-balance">
             Built to load in
             <span class="italic text-teal">under a second</span>
           </h2>
           <p class="mt-6 max-w-md text-base text-white/65 text-pretty">
-            Sites built with modern tools load nearly instantly which keeps
-            visitors engaged longer and helping you rank higher on Google. No
-            technical knowledge required on your end.
+            Sites built with modern tools load nearly instantly which keeps visitors engaged longer and helping you rank higher on Google. No technical knowledge required on your end.
           </p>
 
           <div class="mt-10 grid grid-cols-2 gap-4">
             {
               performanceMinis.map((m, i) => (
-                <div
-                  class="rounded-xl border border-white/10 bg-white/5 p-4 backdrop-blur reveal-up opacity-0"
-                  style={`transition-delay: ${i * 80 + 200}ms`}
-                >
+                <div class="rounded-xl border border-white/10 bg-white/5 p-4 backdrop-blur reveal-up opacity-0" style={`transition-delay: ${i * 80 + 200}ms`}>
                   <m.icon class="h-4 w-4 text-gold" />
                   <div class="mt-3 text-lg text-white">{m.label}</div>
                   <div class="text-[11px] text-white/55 mt-0.5">{m.sub}</div>
@@ -327,35 +246,19 @@ const metaDescription =
               ))
             }
           </div>
-          <a
-            href="/seo/"
-            class="inline-flex items-center gap-2 text-gold hover:gap-3 transition-all duration-300 pt-5 text-center md:text-left"
-          >
+          <a href="/seo/" class="inline-flex items-center gap-2 text-gold hover:gap-3 transition-all duration-300 pt-5 text-center md:text-left">
             Explore How SEO Benefits Your Business
-            <svg
-              width="14"
-              height="14"
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              stroke-width="2"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-            >
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
               <path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path>
             </svg>
           </a>
         </div>
 
         <!-- Right column — slides in from right, then scores animate -->
-        <div
-          class="rounded-2xl border border-white/10 bg-white/5 p-6 backdrop-blur md:p-8 self-start reveal-right opacity-0"
-        >
+        <div class="rounded-2xl border border-white/10 bg-white/5 p-6 backdrop-blur md:p-8 self-start reveal-right opacity-0">
           <div class="flex items-center justify-between">
             <div>
-              <div class="text-[11px] uppercase tracking-widest text-white/50">
-                Site health check
-              </div>
+              <div class="text-[11px] uppercase tracking-widest text-white/50">Site health check</div>
               <div class="text-xl text-white mt-0.5">How your site scores</div>
             </div>
             <Gauge class="h-5 w-5 text-teal" />
@@ -363,41 +266,18 @@ const metaDescription =
 
           <div class="mt-8 grid grid-cols-2 gap-4" id="lighthouse-scores">
             {
-              lighthouseScores.map((b) => (
+              lighthouseScores.map(b => (
                 <div class="text-center">
                   <div class="relative mx-auto h-20 w-20">
                     <svg viewBox="0 0 36 36" class="h-full w-full -rotate-90">
-                      <circle
-                        cx="18"
-                        cy="18"
-                        r="15.9"
-                        fill="none"
-                        stroke="rgba(255,255,255,0.1)"
-                        stroke-width="3"
-                      />
-                      <circle
-                        cx="18"
-                        cy="18"
-                        r="15.9"
-                        fill="none"
-                        stroke="#6dbbb5"
-                        stroke-width="3"
-                        stroke-dasharray="0, 100"
-                        stroke-linecap="round"
-                        class="score-ring"
-                        data-score={b.score}
-                      />
+                      <circle cx="18" cy="18" r="15.9" fill="none" stroke="rgba(255,255,255,0.1)" stroke-width="3" />
+                      <circle cx="18" cy="18" r="15.9" fill="none" stroke="#6dbbb5" stroke-width="3" stroke-dasharray="0, 100" stroke-linecap="round" class="score-ring" data-score={b.score} />
                     </svg>
-                    <div
-                      class="absolute inset-0 flex items-center justify-center text-base text-white score-number"
-                      data-score={b.score}
-                    >
+                    <div class="absolute inset-0 flex items-center justify-center text-base text-white score-number" data-score={b.score}>
                       0
                     </div>
                   </div>
-                  <div class="mt-2 text-[10px] uppercase tracking-widest text-white/55">
-                    {b.label}
-                  </div>
+                  <div class="mt-2 text-[10px] uppercase tracking-widest text-white/55">{b.label}</div>
                 </div>
               ))
             }
@@ -406,10 +286,7 @@ const metaDescription =
           <div class="mt-8 space-y-3 border-t border-white/10 pt-6">
             {
               lighthouseChecks.map((m, i) => (
-                <div
-                  class="flex items-center justify-between text-[12px] reveal-up opacity-0"
-                  style={`transition-delay: ${i * 80}ms`}
-                >
+                <div class="flex items-center justify-between text-[12px] reveal-up opacity-0" style={`transition-delay: ${i * 80}ms`}>
                   <span class="text-white/65">{m.label}</span>
                   <span class="text-gold font-semibold">{m.value}</span>
                 </div>
@@ -426,14 +303,8 @@ const metaDescription =
     <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
       <!-- LEFT: Image — slides in from left -->
       <div class="relative reveal-left opacity-0">
-        <div
-          class="relative rounded-3xl overflow-hidden shadow-2xl w-full h-48 lg:h-auto"
-        >
-          <Image
-            src={dockImage}
-            alt="Professional website example"
-            class="w-full h-full object-cover lg:aspect-3/4"
-          />
+        <div class="relative rounded-3xl overflow-hidden shadow-2xl w-full h-48 lg:h-auto">
+          <Image src={dockImage} alt="Professional website example" class="w-full h-full object-cover lg:aspect-3/4" />
         </div>
       </div>
 
@@ -441,43 +312,21 @@ const metaDescription =
       <div class="reveal-right opacity-0">
         <div class="mb-12">
           <SectionLabel>What We Offer</SectionLabel>
-          <Heading class="mb-4">
-            Websites Built for Small Business Success
-          </Heading>
-          <Text>
-            We offer transparent pricing, fast turnaround, and ongoing support.
-            Everything you need to succeed online, with no surprises.
-          </Text>
+          <Heading class="mb-4"> Websites Built for Small Business Success </Heading>
+          <Text> We offer transparent pricing, fast turnaround, and ongoing support. Everything you need to succeed online, with no surprises. </Text>
         </div>
 
         <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
           {
             benefits.map((benefit, i) => (
-              <div
-                class="space-y-2 reveal-up opacity-0"
-                style={`transition-delay: ${i * 80 + 200}ms`}
-              >
+              <div class="space-y-2 reveal-up opacity-0" style={`transition-delay: ${i * 80 + 200}ms`}>
                 <div class="flex items-start space-x-3">
-                  <svg
-                    class="h-6 w-6 text-teal shrink-0 mt-0.5"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    stroke="currentColor"
-                  >
-                    <path
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                      stroke-width="2"
-                      d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"
-                    />
+                  <svg class="h-6 w-6 text-teal shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
                   </svg>
                   <div>
-                    <h3 class="font-bold text-navy text-lg mb-1">
-                      {benefit.title}
-                    </h3>
-                    <p class="text-slate-600 text-sm leading-relaxed">
-                      {benefit.desc}
-                    </p>
+                    <h3 class="font-bold text-navy text-lg mb-1">{benefit.title}</h3>
+                    <p class="text-slate-600 text-sm leading-relaxed">{benefit.desc}</p>
                   </div>
                 </div>
               </div>
@@ -489,17 +338,8 @@ const metaDescription =
           <a href="/contact/">
             <Button variant="primary" size="lg">
               Schedule a Call
-              <svg
-                class="ml-2 h-5 w-5"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke="currentColor"
-              >
-                <path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="2"
-                  d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
+              <svg class="ml-2 h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
               </svg>
             </Button>
           </a>
@@ -513,10 +353,7 @@ const metaDescription =
     <div class="text-center max-w-3xl mx-auto mb-16 reveal-up opacity-0">
       <SectionLabel>Portfolio</SectionLabel>
       <Heading class="text-white">Our Recently Completed Projects</Heading>
-      <Text class="text-white">
-        A look at some of the small businesses we've helped build a stronger
-        online presence by turning visitors into paying customers.
-      </Text>
+      <Text class="text-white"> A look at some of the small businesses we've helped build a stronger online presence by turning visitors into paying customers. </Text>
     </div>
 
     <Portfolio show="grid" gridLimit={3} />
@@ -527,10 +364,7 @@ const metaDescription =
     <div class="text-center max-w-3xl mx-auto mb-16 reveal-up opacity-0">
       <SectionLabel>Pricing Plans</SectionLabel>
       <Heading>Simple, Transparent Pricing Plans</Heading>
-      <Text>
-        Choose the plan that fits your small business needs. No hidden fees, no
-        surprises.
-      </Text>
+      <Text> Choose the plan that fits your small business needs. No hidden fees, no surprises. </Text>
     </div>
     <PricingPlans />
   </Section>
@@ -576,8 +410,8 @@ const metaDescription =
   // ── Shared reveal observer (mirrors SEO page pattern) ──
   function initRevealAnimations() {
     const revealObserver = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
+      entries => {
+        entries.forEach(entry => {
           if (entry.isIntersecting) {
             entry.target.classList.add("animate-in");
             revealObserver.unobserve(entry.target);
@@ -587,9 +421,7 @@ const metaDescription =
       { threshold: 0.15 }
     );
 
-    document
-      .querySelectorAll(".reveal-left, .reveal-right, .reveal-up")
-      .forEach((el) => revealObserver.observe(el));
+    document.querySelectorAll(".reveal-left, .reveal-right, .reveal-up").forEach(el => revealObserver.observe(el));
   }
 
   // ── Lighthouse score rings + counters ──
@@ -615,15 +447,12 @@ const metaDescription =
         const progress = Math.min(elapsed / duration, 1);
         const eased = easeOut(progress);
 
-        rings.forEach((ring) => {
+        rings.forEach(ring => {
           const target = parseFloat(ring.dataset.score ?? "0");
-          ring.setAttribute(
-            "stroke-dasharray",
-            `${(target * eased).toFixed(2)}, 100`
-          );
+          ring.setAttribute("stroke-dasharray", `${(target * eased).toFixed(2)}, 100`);
         });
 
-        numbers.forEach((el) => {
+        numbers.forEach(el => {
           const target = parseInt(el.dataset.score ?? "0", 10);
           el.textContent = String(Math.round(target * eased));
         });
@@ -635,7 +464,7 @@ const metaDescription =
     };
 
     const scoreObserver = new IntersectionObserver(
-      (entries) => {
+      entries => {
         if (entries[0].isIntersecting) {
           animate();
           scoreObserver.disconnect();
