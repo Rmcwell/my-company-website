@@ -2,10 +2,20 @@
 import Logo from "../assets/logo/logo-horizontal-light.svg";
 import Button from "./ui/Button.astro";
 import { Mail, Phone, MapPin } from "lucide-astro";
+import { contactInfo } from "../data/info.ts";
 
 const currentYear = new Date().getFullYear();
 
-const navigationLinks = ["Home", "Pricing", "Web-Design", "SEO", "Contact", "FAQ", "Portfolio", "About"];
+const navigationLinks = [
+  "Home",
+  "Pricing",
+  "Web-Design",
+  "SEO",
+  "Contact",
+  "FAQ",
+  "Portfolio",
+  "About"
+];
 ---
 
 <div class="w-full">
@@ -15,7 +25,9 @@ const navigationLinks = ["Home", "Pricing", "Web-Design", "SEO", "Contact", "FAQ
         <!-- Logo / CTA -->
         <div class="space-y-4 flex flex-col items-center md:items-start">
           <Logo class="h-25 w-auto" aria-label="Dockside Web Solutions Logo" />
-          <p class="text-slate-400 text-sm leading-relaxed">Fast, modern websites for small businesses</p>
+          <p class="text-slate-400 text-sm leading-relaxed">
+            Fast, modern websites for small businesses
+          </p>
           <a href="/contact/" class="flex items-center space-x-2">
             <Button variant="primary" size="sm">Get Started Today</Button>
           </a>
@@ -29,7 +41,9 @@ const navigationLinks = ["Home", "Pricing", "Web-Design", "SEO", "Contact", "FAQ
               {
                 navigationLinks.map(item => (
                   <li>
-                    <a href={item === "Home" ? "/" : `/${item.toLowerCase()}/`} class="text-slate-300 hover:text-teal transition-colors text-sm">
+                    <a
+                      href={item === "Home" ? "/" : `/${item.toLowerCase()}/`}
+                      class="text-slate-300 hover:text-teal transition-colors text-sm">
                       {item}
                     </a>
                   </li>
@@ -46,11 +60,13 @@ const navigationLinks = ["Home", "Pricing", "Web-Design", "SEO", "Contact", "FAQ
             <ul class="space-y-4">
               <li class="flex items-start space-x-3 text-slate-300 text-sm">
                 <Mail class="h-5 w-5 text-teal shrink-0" />
-                <a href="mailto:contact@docksideweb.com" class="hover:text-teal"> contact@docksideweb.com </a>
+                <a href={`mailto:${contactInfo.email}`} class="hover:text-teal">
+                  {contactInfo.email}
+                </a>
               </li>
               <li class="flex items-start space-x-3 text-slate-300 text-sm">
                 <Phone class="h-5 w-5 text-teal shrink-0" />
-                <a href="tel:+14438447850" class="hover:text-teal"> +1 (443) 844-7850 </a>
+                <a href={contactInfo.phoneHref} class="hover:text-teal"> {contactInfo.phone} </a>
               </li>
               <li class="flex items-start space-x-3 text-slate-300 text-sm">
                 <MapPin class="h-5 w-5 text-teal shrink-0" />
@@ -65,16 +81,24 @@ const navigationLinks = ["Home", "Pricing", "Web-Design", "SEO", "Contact", "FAQ
         </div>
       </div>
 
-      <div class="border-t border-white/10 pt-8 flex flex-col md:flex-row justify-between items-center">
+      <div
+        class="border-t border-white/10 pt-8 flex flex-col md:flex-row justify-between items-center">
         <p class="text-slate-500 text-sm">
-          © {currentYear} Dockside Web Solutions. All rights reserved.
+          © {currentYear}
+          {contactInfo.businessNameFormal}. All rights reserved.
         </p>
         <div class="flex space-x-3 mt-4 md:mt-0">
-          <a href="/legal/privacy-policy/" class="text-slate-400 hover:text-yellow-500 transition-colors text-sm" aria-label="Privacy Policy">
+          <a
+            href="/legal/privacy-policy/"
+            class="text-slate-400 hover:text-yellow-500 transition-colors text-sm"
+            aria-label="Privacy Policy">
             <p>Privacy Policy</p>
           </a>
           <p class="text-slate-400">|</p>
-          <a href="/legal/terms-of-service/" class="text-slate-400 hover:text-yellow-500 transition-colors text-sm" aria-label="Terms of Service">
+          <a
+            href="/legal/terms-of-service/"
+            class="text-slate-400 hover:text-yellow-500 transition-colors text-sm"
+            aria-label="Terms of Service">
             <p>Terms of Service</p>
           </a>
         </div>
